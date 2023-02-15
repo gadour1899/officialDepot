@@ -8,9 +8,6 @@ const sequelize = new Sequelize('depot', 'root', 'root', {
     dialect: 'mysql'
   });
 
-  sequelize.authenticate()
-  .then(()=>{console.log('Successfully authenticated')})
-  .catch(err => {console.log(err)})
 
 
 
@@ -44,13 +41,44 @@ db.Product.belongsToMany(db.User,{
 })
 
 // 1  to many relationship  product fournisseur
-db.Fournisseur.hasMany(db.Product,{
-  as:"product"
+db.Fournisseur.hasMany(db.Product)
+  db.Product.belongsTo(db.Fournisseur)
+
+
+
+//   //try
+//   db.Fournisseur.create({CompanyName:"WOODY",
+//   manager:"marwen",
+//   email:"marwen@rbk.rbk",
+//   password:"yaallah",
+//  image:" nice pic",
+//   adress:"35 rue al yarmouk cité hached 2 ",
+//   phoneNumber:"41000494"
   
-  })
-  db.Product.belongsTo(db.Fournisseur,{
-      foreignKey: "fournisseurId",
-   as:"fournisseur"
-  })
+// })
+
+
+// db.Product.create({
+//   name:"MDFF",
+//   price:"2000",
+//   image:"nice pict",
+//   description:"MDF 15/16",
+//   category:"wood",
+//   quantity:"900"
+// })
+
+
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+
+sequelize.authenticate()
+.then(()=>{console.log('Successfully authenticated')})
+.catch(err => {console.log(err)})
 
 module.exports = db;
