@@ -35,6 +35,9 @@ deleteFournisseur:async (req, res)=> {
 
 }
 
-// njarreb
-// njarreb 2 
-// njarb 4
+// njarreb gadour
+// njarreb 2 marwen 
+
+
+//njareb 3 ghada 
+// njarb 4 dali
