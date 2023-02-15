@@ -1,7 +1,7 @@
 // Define and export the sequelize model that represents the table users.
 
 module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define("user", {
+  const User = sequelize.define("users", {
       idU: {
     type:DataTypes.INTEGER,
     primaryKey: true,

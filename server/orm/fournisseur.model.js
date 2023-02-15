@@ -14,7 +14,8 @@ module.exports = (sequelize, DataTypes) => {
         phoneNumber:{ type:DataTypes.INTEGER},
         
        
-    });
+    }
+    );
   
     return fournisseur;
   };
