@@ -35,3 +35,4 @@ deleteFournisseur:async (req, res)=> {
 
 }
 
+// njarreb
