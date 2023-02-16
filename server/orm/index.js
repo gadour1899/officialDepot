@@ -1,15 +1,14 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const config = require('./config/config.js');
+const config = require('./config/config');
+
 
 //Created a Sequelize instance and passed the appropriate parameters separately,
 //database, user and password fields coming from the config files.
-const sequelize = new Sequelize(config.DATABASE, config.USER, config.PASSWORD, {
+const sequelize = new Sequelize(config.DATABASE, config.USER,config.PASSWORD, {
     HOST: 'localhost',
     dialect: 'mysql'
   });
-  sequelize.authenticate()
-  .then(()=>{console.log('Successfully authenticated')})
-  .catch(err => {console.log(err)})
+
 
 
 
@@ -25,27 +24,65 @@ db.Product = require('./product.model.js')(sequelize,DataTypes)//require the pos
 db.Fournisseur = require('./fournisseur.model.js')(sequelize,DataTypes)//require the comment model
 
 db.sequelize.sync({force:false})
-.then(()=>{console.log('heki li ma na3rfouhech')})
+
+
+.then(()=>{console.log("All models were synchronized successfully.")})
 .catch(err => {console.log(err)})
   
 
-// 1 to many relationship  user product 
+// many to many relationship  user  product  
 
-// db.User.hasMany(db.Product, {
-// as :"products"})
-// db.User.belongsTo(db.Product,{
-//   foreignKey: "idU",
-//   as: "User",
-//   constraints: false,
+
+
+
+db.User.belongsToMany(db.Product,{
+through:"relation"
+
+})
+db.Product.belongsToMany(db.User,{
+  through:"relation"
+})
+
+// 1  to many relationship  product fournisseur
+db.Fournisseur.hasMany(db.Product)
+  db.Product.belongsTo(db.Fournisseur)
+
+
+
+
+//   //try
+//   db.Fournisseur.create({CompanyName:"WOODY",
+//   manager:"marwen",
+//   email:"marwen@rbk.rbk",
+//   password:"yaallah",
+//  image:" nice pic",
+//   adress:"35 rue al yarmouk cité hached 2 ",
+//   phoneNumber:"41000494"
+  
 // })
 
-// // 1 to many relationship  product fournisseur
-// db.Fournisseur.hasMany(db.Product,{
-//   as :"products"})
-//   db.Fournisseur.belongsTo(db.Product,{
-//   foreignKey: "idF",
-//   as: "Fournisseur",
+
+// db.Product.create({
+//   name:"MDFF",
+//   price:"2000",
+//   image:"nice pict",
+//   description:"MDF 15/16",
+//   category:"wood",
+//   quantity:"900"
 // })
 
+
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+
+sequelize.authenticate()
+.then(()=>{console.log('Successfully authenticated')})
+.catch(err => {console.log(err)})
 
 module.exports = db;
