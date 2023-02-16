@@ -15,8 +15,10 @@ module.exports = {
             quantity: req.body.quantity,
             image: req.body.image,
             category: req.body.category,
+            fournisseurId: req.body.fournisseurId
         }
         const product = await Product.create(schema)
+
         res.status(200).send(product)
     },
 // method to update a product 

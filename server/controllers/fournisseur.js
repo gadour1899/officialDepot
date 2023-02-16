@@ -2,21 +2,35 @@
 //Complete the request handlers with models interaction after importing them from the database folder
 const db= require('../orm/index.js');
 const Fournisseur= db.Fournisseur
+const cloudinary= require('../cloudinary/cloudinary.js');
 module.exports = {
 
 // method to add a new fournisseur
     addFournisseur:async (req, res)=> {
-        let schema = {
-            CompanyName: req.body.CompanyName,
-            manager: req.body.manager,
-            email: req.body.email,
-            password: req.body.password,
-            image: req.body.image,
-            adress: req.body.adress,
+        console.log(req.body);
+        const {CompanyName,manager,email,password,image,adress} = req.body;
+        try{
+            const result = await cloudinary.uploader.upload(image,{
+                folder:'fournisseurs'
+            })
+        const product = await Fournisseur.create({
+            CompanyName,
+            manager,
+            email,
+            password,
+            image:{
+                public_id: result.public_id,
+                url: result.secure_url
+            },
+            adress
+
+    
         }
-        const product = await Fournisseur.create(schema)
+        )
+
         res.status(200).send(product)
-    },
+    }catch (err){console.log(err)}
+},
 // method to update fournisseur information in the database
 updateFournisseur:async (req, res)=> {
     let id=req.params.id
@@ -27,11 +41,13 @@ updateFournisseur:async (req, res)=> {
 // method to delete a fournisseur account 
 deleteFournisseur:async (req, res)=> {
     let id=req.params.id
-    const product = await Fournisseur.destroy({where:{id:id}})
+    await Fournisseur.destroy({where:{id:id}})
     res.status(200).send('account deleted')
+},
+
+getAllFournisseur:async (req, res)=> {
+    let fournisseurs = await Fournisseur.findAll({})
+    res.status(200).send(fournisseurs)
+    },
+
 }
-
-
-
-}
-

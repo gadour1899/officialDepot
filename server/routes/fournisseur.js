@@ -5,7 +5,8 @@ const router = express.Router();
 const Fournisseur = require('../controllers/fournisseur.js');
 
 
-
+// get all the fournisseurs
+router.get('/', Fournisseur.getAllFournisseur);
 //ADD a new fournisseur 
 router.post('/addf', Fournisseur.addFournisseur);
 // update fournisseur information

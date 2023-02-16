@@ -8,7 +8,7 @@ export const Singin = () => {
             placeholder='email'
             onChange={(e)=>{(e.target.value)}} /><br />
             <input type="text"
-            placeholder='mode passe'
+            placeholder='mot de passe'
             onChange={(e)=>{(e.target.value)}} /><br />
         </form>
         <button>add</button>
