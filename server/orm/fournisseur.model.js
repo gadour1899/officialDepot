@@ -2,9 +2,6 @@
 
 module.exports = (sequelize, DataTypes) => {
     const fournisseur = sequelize.define("fournisseur", {
-      idF:{ type:DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true},
         CompanyName:{ type:DataTypes.STRING},
         manager:{ type:DataTypes.STRING},
         email:{ type:DataTypes.STRING},

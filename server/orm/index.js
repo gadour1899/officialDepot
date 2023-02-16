@@ -1,5 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const config = require('../../config/config.js');
+const config = require('./config/config.js');
 
 //Created a Sequelize instance and passed the appropriate parameters separately,
 //database, user and password fields coming from the config files.
@@ -26,26 +26,26 @@ db.Fournisseur = require('./fournisseur.model.js')(sequelize,DataTypes)//require
 
 db.sequelize.sync({force:false})
 .then(()=>{console.log('heki li ma na3rfouhech')})
-.catch(err => {console.log('err')})
+.catch(err => {console.log(err)})
   
 
 // 1 to many relationship  user product 
 
-db.User.hasMany(db.Product, {
-as :"products"})
-db.User.belongsTo(db.Product,{
-  foreignKey: "idU",
-  as: "User",
-  constraints: false,
-})
+// db.User.hasMany(db.Product, {
+// as :"products"})
+// db.User.belongsTo(db.Product,{
+//   foreignKey: "idU",
+//   as: "User",
+//   constraints: false,
+// })
 
-// 1 to many relationship  product fournisseur
-db.Fournisseur.hasMany(db.Product,{
-  as :"products"})
-  db.Fournisseur.belongsTo(db.Product,{
-  foreignKey: "idF",
-  as: "Fournisseur",
-})
+// // 1 to many relationship  product fournisseur
+// db.Fournisseur.hasMany(db.Product,{
+//   as :"products"})
+//   db.Fournisseur.belongsTo(db.Product,{
+//   foreignKey: "idF",
+//   as: "Fournisseur",
+// })
 
 
 module.exports = db;

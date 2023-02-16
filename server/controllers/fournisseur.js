@@ -35,10 +35,3 @@ deleteFournisseur:async (req, res)=> {
 
 }
 
-// njarreb gadour
-// njarreb 2 marwen 
-
-
-//njareb 3 ghada 
-// njarb 4 dali
-// iheb njarb
