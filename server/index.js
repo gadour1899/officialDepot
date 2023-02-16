@@ -14,6 +14,7 @@ const User = require('./routes/users.js');
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
+app.use(express.static(__dirname + "/../client/dist"));
 
 //Add Routes to the middleware handling path, specifying the respective URL path
 app.use('/api/fournisseur', Fournisseur);

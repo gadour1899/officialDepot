@@ -1,9 +1,10 @@
 const { Sequelize, DataTypes } = require('sequelize');
-// const config = require('../../config/config.js');
+const config = require('./config/config');
+
 
 //Created a Sequelize instance and passed the appropriate parameters separately,
 //database, user and password fields coming from the config files.
-const sequelize = new Sequelize('depot', 'root', 'root', {
+const sequelize = new Sequelize(config.DATABASE, config.USER,config.PASSWORD, {
     HOST: 'localhost',
     dialect: 'mysql'
   });
@@ -23,6 +24,8 @@ db.Product = require('./product.model.js')(sequelize,DataTypes)//require the pos
 db.Fournisseur = require('./fournisseur.model.js')(sequelize,DataTypes)//require the comment model
 
 db.sequelize.sync({force:false})
+
+
 .then(()=>{console.log("All models were synchronized successfully.")})
 .catch(err => {console.log(err)})
   
@@ -43,6 +46,7 @@ db.Product.belongsToMany(db.User,{
 // 1  to many relationship  product fournisseur
 db.Fournisseur.hasMany(db.Product)
   db.Product.belongsTo(db.Fournisseur)
+
 
 
 
