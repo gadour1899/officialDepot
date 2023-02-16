@@ -27,7 +27,7 @@ module.exports = {
         }
         const user = await User.update(schema, {
             where: {
-                id: req.params.idU
+                id: req.params.id
             }
         })
         res.status(200).send(user)
@@ -36,7 +36,7 @@ module.exports = {
     deleteUser:async (req, res)=> {
         const user = await User.destroy({
             where: {
-                id: req.params.idU
+                id: req.params.id
             }
         })
         res.status(200).send("user deleted successfully")

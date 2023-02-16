@@ -1,11 +1,7 @@
 // Define and export the sequelize model that represents the table posts.
 
 module.exports = (sequelize, DataTypes) => {
-    const product = sequelize.define("product", {
-      id :{type:DataTypes.INTEGER, 
-      primaryKey:true,
-      autoIncrement:true,
-      },
+    const product = sequelize.define("products", {
       name: {type: DataTypes.STRING},
       price: {type: DataTypes.INTEGER},
       image:{type:DataTypes.STRING},
