@@ -21,14 +21,14 @@ module.exports = {
     },
 // method to update a product 
 updateProduct:async (req, res)=> {
-    let id=req.params.idP
+    let id=req.params.id
     const product = await Product.update(req.body,{where:{id:id}})
     res.status(200).send(product)
 },
 
 // method to delete a product 
 deleteProduct:async (req, res)=> {
-    let id=req.params.idP
+    let id=req.params.id
     const product = await Product.destroy({where:{id:id}})
     res.status(200).send('Product deleted')
 }

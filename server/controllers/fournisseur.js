@@ -19,14 +19,14 @@ module.exports = {
     },
 // method to update fournisseur information in the database
 updateFournisseur:async (req, res)=> {
-    let id=req.params.idF
+    let id=req.params.id
     const product = await Fournisseur.update(req.body,{where:{id:id}})
     res.status(200).send(product)
 },
 
 // method to delete a fournisseur account 
 deleteFournisseur:async (req, res)=> {
-    let id=req.params.idF
+    let id=req.params.id
     const product = await Fournisseur.destroy({where:{id:id}})
     res.status(200).send('account deleted')
 }
@@ -35,10 +35,3 @@ deleteFournisseur:async (req, res)=> {
 
 }
 
-// njarreb gadour
-// njarreb 2 marwen 
-
-
-//njareb 3 ghada 
-// njarb 4 dali
-// iheb njarb
