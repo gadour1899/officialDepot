@@ -7,11 +7,6 @@ const sequelize = new Sequelize(config.DATABASE, config.USER, config.PASSWORD, {
     HOST: 'localhost',
     dialect: 'mysql'
   });
-  sequelize.authenticate()
-  .then(()=>{console.log('Successfully authenticated')})
-  .catch(err => {console.log(err)})
-
-
 
 //Create and export a db object which holds the sequelize models,
 //with the respective associations.
@@ -25,27 +20,29 @@ db.Product = require('./product.model.js')(sequelize,DataTypes)//require the pos
 db.Fournisseur = require('./fournisseur.model.js')(sequelize,DataTypes)//require the comment model
 
 db.sequelize.sync({force:false})
+
 .then(()=>{console.log('connected successfully')})
-.catch(err => {console.log('err')})
-  
+.catch(err => {console.log(err)})
 
-// 1 to many relationship  user product 
 
-db.User.hasMany(db.Product, {
-as :"products"})
-db.User.belongsTo(db.Product,{
-  foreignKey: "idU",
-  as: "User",
-  constraints: false,
+// many to many relationship  user  product  
+
+
+db.User.belongsToMany(db.Product,{
+through:"relation"
+
+})
+db.Product.belongsToMany(db.User,{
+  through:"relation"
 })
 
-// 1 to many relationship  product fournisseur
-db.Fournisseur.hasMany(db.Product,{
-  as :"products"})
-  db.Fournisseur.belongsTo(db.Product,{
-  foreignKey: "idF",
-  as: "Fournisseur",
-})
+// 1  to many relationship  product fournisseur
+db.Fournisseur.hasMany(db.Product)
+  db.Product.belongsTo(db.Fournisseur)
 
+
+sequelize.authenticate()
+.then(()=>{console.log('Successfully authenticated')})
+.catch(err => {console.log(err)})
 
 module.exports = db;
