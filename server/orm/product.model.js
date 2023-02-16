@@ -2,10 +2,6 @@
 
 module.exports = (sequelize, DataTypes) => {
     const product = sequelize.define("product", {
-      id :{type:DataTypes.INTEGER, 
-      primaryKey:true,
-      autoIncrement:true,
-      },
       name: {type: DataTypes.STRING},
       price: {type: DataTypes.INTEGER},
       image:{type:DataTypes.STRING},
@@ -13,6 +9,5 @@ module.exports = (sequelize, DataTypes) => {
       category: {type: DataTypes.STRING},
       quantity: {type: DataTypes.INTEGER}, 
     });
-  
     return product;
   };

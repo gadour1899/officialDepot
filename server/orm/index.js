@@ -25,7 +25,7 @@ db.Product = require('./product.model.js')(sequelize,DataTypes)//require the pos
 db.Fournisseur = require('./fournisseur.model.js')(sequelize,DataTypes)//require the comment model
 
 db.sequelize.sync({force:false})
-.then(()=>{console.log('heki li ma na3rfouhech')})
+.then(()=>{console.log('connected successfully')})
 .catch(err => {console.log('err')})
   
 
