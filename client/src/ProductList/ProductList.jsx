@@ -32,7 +32,7 @@ setOpenFormUpdate(!openFormUpdate)
 }
 
 
-  //onclick open   inputs 
+  //onclick open create product inputs 
   const onClick =() => {
 setOpenForm(!openForm)   
   setChange(!change);
