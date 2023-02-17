@@ -54,9 +54,30 @@ try{
 
 
     updateProduct:async (req, res)=> {
-    let id=req.params.id
-    const product = await Product.update(req.body,{where:{id:id}})
+        console.log(req.body)
+
+
+        const {name, description,price, quantity,image,category}=req.body;
+        try{
+            const result = await cloudinary.uploader.upload(image,{
+                folder:'products'
+            })
+
+    
+    const product = await Product.update({
+        name,
+        description,
+        price,
+        quantity,
+        image:{
+            public_id: result.public_id,
+            url: result.url,           
+        },
+        category
+    },{where:{
+        id:req.params.id}})
     res.status(200).send(product)
+}catch (err){console.log(err)}
 },
 
 

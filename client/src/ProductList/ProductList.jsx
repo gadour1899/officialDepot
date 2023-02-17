@@ -10,6 +10,8 @@ const ProductList = () => {
     const [openForm,setOpenForm]=useState(false); // to open creating update form
     const [openFormUpdate,setOpenFormUpdate]=useState(false);// to open updating update form
     const [id,setId]=useState(0)
+    const [toUpdate,setToUpdate]=useState({})
+
    
     // const [name,setName]=useState("")
     // const [price,setPrice]=useState(0)
@@ -29,6 +31,8 @@ const ProductList = () => {
 
 const togglePopup =() => {
 setOpenFormUpdate(!openFormUpdate)
+setChange(!change)
+
 }
 
 
@@ -57,7 +61,10 @@ setOpenForm(!openForm)
 // }
 
 // handle the onclick event to delete product
-
+const onEdit=(product)=>{
+  console.log('edited product',product)
+  setToUpdate(product)
+}
 const onDelete =(product) => {
     let id=product;
     console.log(id);
@@ -95,8 +102,11 @@ const onDelete =(product) => {
             <td>{product.description}</td>
             <td>{product.category}</td>
             <td>{product.quantity}</td>
-            <button  class="editbutton"  onClick={togglePopup} >Edit</button>
-            {openFormUpdate && <PopOutUpdate  handleClose={togglePopup}/>}
+            <button  className="editbutton"  onClick={()=>{
+              onEdit(product)
+              togglePopup()}} >Edit</button>
+              
+            {openFormUpdate && <PopOutUpdate   change={change} setChange={setChange} product={toUpdate} handleClose={togglePopup}/>}
             <button  onClick={()=>onDelete(product.id)}class="deletebutton">Delete</button>
           </tr>
         ))}

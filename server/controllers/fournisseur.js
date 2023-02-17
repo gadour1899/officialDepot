@@ -45,7 +45,7 @@ deleteFournisseur:async (req, res)=> {
     res.status(200).send('account deleted')
 },
 
-getAllFournisseur:async (req, res)=> {
+getFournisseur:async (req, res)=> {
     let fournisseurs = await Fournisseur.findAll({})
     res.status(200).send(fournisseurs)
     },

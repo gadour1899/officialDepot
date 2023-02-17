@@ -81,7 +81,7 @@ const submitForm=(e)=>{
     
   }
 
-  axios.post('api/product/addp', data)
+  axios.put('api/product/addp', data)
   .then(response=> console.log(response))
   .catch(err=> console.log(err))
 // props.setChange(!props.change)

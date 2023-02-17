@@ -6,7 +6,7 @@ const Fournisseur = require('../controllers/fournisseur.js');
 
 
 // get all the fournisseurs
-router.get('/', Fournisseur.getAllFournisseur);
+router.get('/getf', Fournisseur.getFournisseur);
 //ADD a new fournisseur 
 router.post('/addf', Fournisseur.addFournisseur);
 // update fournisseur information
