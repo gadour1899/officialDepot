@@ -2,7 +2,6 @@
 config.js
 client/dist/bundle.js/
 
-
 # Logs
 logs
 *.log

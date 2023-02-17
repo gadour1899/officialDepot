@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import Signeupf from '../src/Signeupf.jsx'
-import ImageTest from './ImageTest.jsx'
+import ProductList from './ProductList/ProductList.jsx'
 
 
 const App = () => {
 
   return (
     <div>
-      < ImageTest />
+      < ProductList />
      
     </div>
   )

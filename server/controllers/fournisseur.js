@@ -13,7 +13,7 @@ module.exports = {
             const result = await cloudinary.uploader.upload(image,{
                 folder:'fournisseurs'
             })
-        const product = await Fournisseur.create({
+        const fournisseur = await Fournisseur.create({
             CompanyName,
             manager,
             email,
@@ -28,7 +28,7 @@ module.exports = {
         }
         )
 
-        res.status(200).send(product)
+        res.status(200).send(fournisseur)
     }catch (err){console.log(err)}
 },
 // method to update fournisseur information in the database
