@@ -1,4 +1,4 @@
-const db= require('../orm/index.js');
+    const db= require('../orm/index.js');
 const Product= db.Product
 module.exports = {
     //method to fetch all product from  database
