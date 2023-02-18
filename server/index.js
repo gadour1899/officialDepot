@@ -3,6 +3,8 @@ const db=require('./orm/index.js')
 const cors = require('cors');
 //Create an Express App
 const app = express();
+const dotenv = require('dotenv').config()
+const cookieParser = require('cookie-parser')
 
 //Require application Route modules
 const Fournisseur = require('./routes/fournisseur.js');
@@ -15,6 +17,7 @@ app.use(express.json({limit:'50mb'}));
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/../client/dist"));
+app.use(cookieParser())
 
 //Add Routes to the middleware handling path, specifying the respective URL path
 app.use('/api/fournisseur', Fournisseur);

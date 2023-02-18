@@ -1,13 +1,19 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+
+
 const Signeupf = () => {
+
+
 const[name,setname]=useState("")
 const [manger,setmanger]=useState("")
 const [email,setemail]=useState("")
 const [password,setpassword]=useState("")
 const [adresse,setadresse]=useState("")
 const[image,setImage]=useState("")
-
+const [redirect , setRedirect]=useState(false)
+const navigate=useNavigate()
 
 const handleImage =e=>{
   const file= e.target.files[0];
@@ -22,9 +28,9 @@ const setFileToBase=file=>{
       setImage(reader.result)
   }
 };
-const submitForm=(e)=>{
-  e.preventDefault();
-  let data={
+
+const handeladd=()=>{
+  axios.post("http://localhost:3000/api/fournisseur/signup",{
     CompanyName: name,
     manager:manger,
     email:email,
@@ -32,19 +38,20 @@ const submitForm=(e)=>{
     image:image,
     adress: adresse,
   }
+  )
+  .then((result)=>{console.log(result)
+  navigate("/loginf")})
+  .catch((err)=>{console.log(err)})
+  setRedirect(true)
+}
 
-  axios.post('api/fournisseur/addf', data)
-  .then(response=> console.log(response))
-  .catch(err=> console.log(err))
 
 
-  }
- 
 
 
   return (
-    <div>
-        <form id='form' onSubmit={submitForm}>
+  <div>
+        <form id='signeF'>
         <input type="file" 
         name='image'
         placeholder='image'
@@ -57,21 +64,23 @@ const submitForm=(e)=>{
                    name='manger'
                  placeholder='manger'
                  onChange={(e)=>{setmanger(e.target.value)}}/><br />
-                 <input type="text" 
+                 <input type="email" 
                 name='email'
                  placeholder='email'
                  onChange={(e)=>{setemail(e.target.value)}}/><br />
-                 <input type="text" 
+                 <input type="password" 
                  name='password'
                  placeholder='password'
                  onChange={(e)=>{setpassword(e.target.value)}}/><br/>
-                 <input type="text"
+                 <input type="adresse"
                  name='adresse' 
                  placeholder='adresse'
                  onChange={(e)=>{setadresse(e.target.value)}}/><br/>
                  
         </form>
             <button  id='button' onClick={submitForm}>add here </button>
+
+          <button  id='butF' onClick={handeladd}>add here </button>
     </div>
   )
 }

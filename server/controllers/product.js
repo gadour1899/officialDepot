@@ -2,6 +2,7 @@ const db= require('../orm/index.js');
 const Product= db.Product;
 const cloudinary= require('../cloudinary/cloudinary.js');
 
+
 module.exports = {
 
 

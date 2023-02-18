@@ -1,3 +1,5 @@
+
+
 /*nav*/
 .navigation{
     display: flex;
@@ -67,14 +69,12 @@
 } */
 
 
-/* input{
-
-.logo .h-8{
+ .logo .h-8{
     
     width: 150px;
     height: 100px;
+ }
 
-}
 .logo {
     list-style-type: none;
     margin: 0;
@@ -586,3 +586,4 @@ b {
 .compte {
   font-size: larger;
 }
+
