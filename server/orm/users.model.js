@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       password:{type:DataTypes.STRING},
       adress:{type:DataTypes.STRING},
       phoneNumber:{type:DataTypes.INTEGER},
-  });
+  },{timestamps:true});
 
   return User;
 };
