@@ -1,8 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState ,component} from 'react'
 import ReactDOM from 'react-dom'
-import Signeupf from '../src/Signeupf.jsx'
 import { BrowserRouter as Router,Route,Routes} from 'react-router-dom'
 import Signf from './Signf.jsx'
+import Navbar from '../src/components/Navbar.jsx'
+import Home from './pages/Home.jsx'
+import ProductDetails from './pages/ProductDetails.jsx'
+
+import Signeupf from './pages/Signeupf.jsx'
+import Favorite from './pages/Favorite.jsx';
+
+import Electronic from './pages/Electronic.jsx';
+
+
+
+
 
 const App = () => {
   const [companyname,setcompanyName]=useState('')
@@ -21,6 +32,7 @@ const App = () => {
   })
 
   return (
+
     <div className='App'>
     {/* <Router>
     <Routes>
@@ -28,7 +40,20 @@ const App = () => {
     <Route path='/loginf' element={<Signf setcompanyName={setcompanyName}/>} />
     </Routes>
     </Router> */}
-  </div>
+ 
+   
+   <Router>
+      <Navbar/>
+     <Routes>
+     <Route exact path="/" element={<Home/>}/>
+     <Route exact path="/product" element={<ProductDetails/>}/>
+     <Route exact path="/fav" element={<Favorite/>}/>
+     <Route exact path="/elec" element={ <Electronic/>}/>
+     
+     </Routes>
+   
+ </Router>
+     </div>
 )
 }
 
