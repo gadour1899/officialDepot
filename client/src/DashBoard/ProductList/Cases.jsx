@@ -68,8 +68,8 @@ const setFileToBase=file=>{
       setImage(reader.result)
   }
 };
-const submitForm=(e)=>{
-  e.preventDefault();
+const submitForm=()=>{
+
   let data={
     
       "name":name,
@@ -81,10 +81,12 @@ const submitForm=(e)=>{
     
   }
 
-  axios.put('api/product/addp', data)
-  .then(response=> console.log(response))
+  axios.post('api/product/addp', data)
+  .then(response=> {console.log(response)
+    props.setChange(!props.change)
+ })
   .catch(err=> console.log(err))
-// props.setChange(!props.change)
+
 // window.location.reload(false);
 
   }
@@ -92,7 +94,7 @@ const submitForm=(e)=>{
 
 
   return (
-<form onSubmit={submitForm}>
+<form>
 <input type="text" name="name" onChange={handleChangeName} placeholder='Product Name ..?' />
 <input type="number" name="price" onChange={handleChangePrice}  placeholder='Product Price in TND ..?' />
 <input type="text" name="description" onChange={handleChangeDescription} placeholder='Product Description ..?' />

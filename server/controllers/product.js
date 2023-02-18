@@ -34,10 +34,10 @@ try{
             description,
             price,
             quantity,
-            image:{
-                public_id:result.public_id,
-                url:result.secure_url,
-            },
+            image:result.secure_url
+                // // public_id:result.public_id,
+                // url:result.secure_url,
+            ,
             category,
         }
 
@@ -69,10 +69,7 @@ try{
         description,
         price,
         quantity,
-        image:{
-            public_id: result.public_id,
-            url: result.url,           
-        },
+        image:result.secure_url,
         category
     },{where:{
         id:req.params.id}})

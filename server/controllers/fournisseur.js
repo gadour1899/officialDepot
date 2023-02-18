@@ -18,10 +18,7 @@ module.exports = {
             manager,
             email,
             password,
-            image:{
-                public_id: result.public_id,
-                url: result.secure_url
-            },
+            image:result.secure_url,
             adress
 
     
