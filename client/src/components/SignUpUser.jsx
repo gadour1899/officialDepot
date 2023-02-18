@@ -41,14 +41,14 @@ const signUpUser = () => {
             address:adress,
             phoneNumber:phoneNumber     
         }
-        // axios.post('http://localhost:3000/api/user/signup',body)
-        // .then((result)=>{
-        //     console.log(result);
-        //     navigate("/login");
-        // })
-        // .catch(err=>{
-        //     console.log(err);
-        // })
+        axios.post('http://localhost:3000/api/user/signup',body)
+        .then((result)=>{
+            console.log(result);
+            navigate("/login");
+        })
+        .catch(err=>{
+            console.log(err);
+        })
         navigate("/login");
         setRedirect(true)
     }

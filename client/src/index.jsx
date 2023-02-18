@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState ,component} from 'react'
 import ReactDOM from 'react-dom'
 import $ from 'jquery'
 import axios from 'axios'
-import SignUpUser from './components/SignUpUser.jsx'
-import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
-import Profile from './components/Profile.jsx'
-import Singin from './components/Singin.jsx'
+// import SignUpUser from './components/SignUpUser.jsx'
+// import Profile from './components/Profile.jsx'
+// import Singin from './components/Singin.jsx'
+import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+import Navbar from '../src/components/Navbar.jsx'
+import Home from './pages/Home.jsx'
+import ProductDetails from './pages/ProductDetails.jsx'
+import Favorite from './pages/Favorite.jsx';
+import Electronic from './pages/Electronic.jsx';
 
 
 const App = () => {
@@ -34,14 +39,18 @@ useEffect(()=>{(
   return (
     <div className='App'>
       <Router>
+      <Navbar/>
       <Routes> 
       {/* <Route path='/profile' element={<Profile/>} /> 
       <Route path='/up' element={<SignUpUser/>} />
-      <Route path='/login' element={<Singin setName={setName}/>} /> */}
-      </Routes>
-      </Router>
-    </div>   
-      
+      <Route path='/login' element={<Singin setName={setName}/>} /> */} 
+    <Route exact path="/" element={<Home/>}/>
+    <Route exact path="/product" element={<ProductDetails/>}/>
+    <Route exact path="/fav" element={<Favorite/>}/>
+    <Route exact path="/elec" element={ <Electronic/>}/>
+    </Routes>
+   </Router>
+    </div>
   )
 }
 
