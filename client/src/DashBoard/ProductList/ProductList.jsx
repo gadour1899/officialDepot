@@ -104,7 +104,7 @@ const onDelete =(product) => {
             <td>{product.description}</td>
             <td>{product.category}</td>
             <td>{product.quantity}</td>
-            <td><img src={product.image} /></td>
+            {/* <td><img src={product.image} /></td> */}
             <button  className="editbutton"  onClick={()=>{
               onEdit(product)
               togglePopup()
