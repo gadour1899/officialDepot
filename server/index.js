@@ -2,6 +2,7 @@ const express = require('express');
 const db=require('./orm/index.js')
 const cors = require('cors');
 const dotenv = require('dotenv').config()
+const bcrypt = require('bcrypt');
 const cookieParser = require('cookie-parser')
 console.log(process.env.SECRET_KEY);
 console.log(process.env.gadour);
@@ -9,8 +10,6 @@ console.log(process.env.gadour);
 
 //Create an Express App
 const app = express();
-const bcrypt = require('bcrypt');
-
 
 //Require application Route modules
 const Fournisseur = require('./routes/fournisseur.js');
@@ -24,7 +23,7 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
-
+app.use(express.static(__dirname + "/../client/dist"));
 
 //Add Routes to the middleware handling path, specifying the respective URL path
 app.use('/api/fournisseur', Fournisseur);

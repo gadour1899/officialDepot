@@ -1,6 +1,8 @@
+
+
 # Config file for the database
 config.js
-client/dist/bundle.js/
+clint/dist/bandle.js/
 
 # Logs
 logs

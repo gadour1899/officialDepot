@@ -11,18 +11,35 @@ import Home from './pages/Home.jsx'
 import ProductDetails from './pages/ProductDetails.jsx'
 import Favorite from './pages/Favorite.jsx';
 import Electronic from './pages/Electronic.jsx';
+// import Signf from './Signf.jsx'
+// import Signeupf from './pages/Signeupf.jsx'
 
 
 const App = () => {
 const [name,setName]=useState('')
+const [companyname,setcompanyName]=useState('')
+
+  useEffect(()=>{(
+      async()=>{
+        const response=await fetch("http://localhost:3000/api/fournisseur/getf",{
+          headers: {'Content-Type': 'application/json'},
+          credentials :'include',
+        })
+        const content=await response.json()
+        setcompanyName(content.companyname)
+      }
+    )
+  },[])
 
 const getCookies = () => {
   // document.cookie 
   console.log('hello world',document.cookie);
 }
+
 useEffect(() =>{
   getCookies()
 })
+
 useEffect(()=>{(
 
     async()=>{
@@ -44,6 +61,10 @@ useEffect(()=>{(
       {/* <Route path='/profile' element={<Profile/>} /> 
       <Route path='/up' element={<SignUpUser/>} />
       <Route path='/login' element={<Singin setName={setName}/>} /> */} 
+       {/* 
+    <Route path='/' element={<Signeupf/>} />
+    <Route path='/loginf' element={<Signf setcompanyName={setcompanyName}/>} />
+    */}
     <Route exact path="/" element={<Home/>}/>
     <Route exact path="/product" element={<ProductDetails/>}/>
     <Route exact path="/fav" element={<Favorite/>}/>
@@ -52,6 +73,7 @@ useEffect(()=>{(
    </Router>
     </div>
   )
+
 }
 
 ReactDOM.render(<App />, document.getElementById('app'))
