@@ -1,10 +1,11 @@
 import React, { useEffect, useState ,component} from 'react'
 import ReactDOM from 'react-dom'
-import $ from 'jquery'
-import axios from 'axios'
+// import axios from 'axios'
 // import SignUpUser from './components/SignUpUser.jsx'
 // import Profile from './components/Profile.jsx'
 // import Singin from './components/Singin.jsx'
+// import Profile from './DashBoard/FournisseurProfile/Profile.jsx';
+// import ProductList from './DashBoard/ProductList/ProductList.jsx'
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import Navbar from '../src/components/Navbar.jsx'
 import Home from './pages/Home.jsx'
@@ -65,6 +66,7 @@ useEffect(()=>{(
     <Route path='/' element={<Signeupf/>} />
     <Route path='/loginf' element={<Signf setcompanyName={setcompanyName}/>} />
     */}
+     {/* <Route exact path="/ProductList" element={<ProductList/>}/> */}
     <Route exact path="/" element={<Home/>}/>
     <Route exact path="/product" element={<ProductDetails/>}/>
     <Route exact path="/fav" element={<Favorite/>}/>

@@ -3,8 +3,12 @@ const router = express.Router();
 
 // Require controller modules.
 const Fournisseur = require('../controllers/fournisseur.js');
-
 const fournisseAuth=require("../middleware/fornisseAuth")
+
+
+// get all the fournisseurs
+router.get('/getf', Fournisseur.getFournisseur);
+
 
 //ADD a new fournisseur 
 router.post('/addf', Fournisseur.addFournisseur);
@@ -19,7 +23,6 @@ router.post("/signup", fournisseAuth.saveFournisseur,Fournisseur.signUp)
 //login route
 router.post("/login",Fournisseur.login)
 
-router.get("/getf", Fournisseur.getFournisseur)
 
 
 router.get('/tokenf', Fournisseur.getfour);
