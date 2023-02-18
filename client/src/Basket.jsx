@@ -1,13 +1,31 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 const Basket = () => {
+    const [basket, setBasket] = useState([]);
+
+    const removeProductFromBasket = (productId) => {
+        setBasket(
+          basket.filter(product => product.id !== productId)
+        );
+      }
+      
+      const getTotalPrice = () => {
+        return basket.reduce((acc, product) => {
+          return acc + product.price * product.quantity;
+        }, 0);
+      }
+      
   return (
-    <div>  <div className="CartContainer">
+
+    
+    <div>
+          <div className="CartContainer">
     <div className="Header">
      <h3 className="Heading">Shopping Carts</h3>
     </div>
     <div className="Cart-Items">
        <div className="image-box">
+        
          <img className='fraise' src="https://www.saida-group.com/interface/catalog/images/product/20150126115514_IM__1.jpg"  />
        </div>
        <div className="about">
@@ -33,8 +51,9 @@ const Basket = () => {
          <div className="amount">$1059</div>
          <div className="remove"><u>Remove</u></div>
        </div>
+       
     </div>
-  <hr/>
+
   <div className="checkout">
   <div className="total">
      <div>
@@ -44,7 +63,8 @@ const Basket = () => {
   </div>
   <button className="buttoni">Commander</button>
   </div>
-</div></div>
+</div>
+</div>
   )
 }
 
