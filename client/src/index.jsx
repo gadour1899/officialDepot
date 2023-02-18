@@ -1,13 +1,15 @@
 import React, { useEffect, useState ,component} from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter , Route,  Routes} from "react-router-dom"
-// import $ from 'jquery'
-// import axios from 'axios'
+import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import Navbar from '../src/components/Navbar.jsx'
 import Home from './pages/Home.jsx'
 import ProductDetails from './pages/ProductDetails.jsx'
 import Pannier from './pages/Pannier.jsx'
 import Signeupf from './pages/Signeupf.jsx'
+import Favorite from './pages/Favorite.jsx';
+import Singin from './pages/Singin.jsx';
+import Electronic from './pages/Electronic.jsx';
+
 
 
 
@@ -15,19 +17,22 @@ const App = () => {
 
   return (
     <div>
+   
+  <Router>
       <Navbar/>
-<ProductDetails/>
-    <BrowserRouter>
-   <Routes>
-    <Route path="/" element={<Home/>}/>
-    <Route path="/product" element={<ProductDetails/>}/>
-    <Route path="/pannier" element={<Pannier/>}/>
-    <Route path="/singup" element={ < Signeupf />}/>
+  <div>
+
+    <Routes>
+    <Route exact path="/" element={<Home/>}/>
+    <Route exact path="/product" element={<ProductDetails/>}/>
+    <Route exact path="/fav" element={<Favorite/>}/>
+    <Route exact path="/pannier" element={<Pannier/>}/>
+    <Route exact path="/singup" element={ <Singin/>}/>
+    <Route exact path="/elec" element={ <Electronic/>}/>
     
-   </Routes>
-  </BrowserRouter>
-      
-     
+    </Routes>
+  </div>
+</Router>
     </div>
   )
 }

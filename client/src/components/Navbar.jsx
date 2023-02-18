@@ -3,35 +3,33 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import Search from '../components/Search.jsx';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+// import { Link } from 'react-router-dom';
+
 
 
 function Navbar() {
+  const navigate = useNavigate()
+  
   return (
-    <div className="navigation">
+ 
+      <nav className="navigation">
+    
+
         <div className="logo ">
-   
-            <img className="h-8 " src="https://i.ibb.co/98pHdFq/2021-10-27-15h51-15.png" alt="" />
-       </div>
+            <img className="h-8 " src="./logo.jpg" alt="" onClick={() => navigate("/")}/>
+       </div> 
           {/* search */}
-       
          <Search/>
           {/* buttons */}
-          <nav className="icons">
-           <div className='iconN'>
-               <PersonOutlineIcon/>
-               </div>
-               <div className='iconN'>
-              <FavoriteBorderIcon/>
-              </div>
-              {/* <div className='iconN'>
-              <Link to='/pannier'>
-                <LocalGroceryStoreIcon/>
-                </Link> 
-             </div> */}
-          </nav>
-    
-    </div>
+          <div className="icons">
+          <div className='iconN'><PersonOutlineIcon onClick={() => navigate("/singup")} /></div>
+         <div className='iconN'><FavoriteBorderIcon onClick={() => navigate("/fav")}/></div> 
+        <div className='iconN'><LocalGroceryStoreIcon onClick={() => navigate("/fpannier")}/></div>
+          </div>
+       </nav>
+
   )
 }
 

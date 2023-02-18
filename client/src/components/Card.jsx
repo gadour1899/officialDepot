@@ -1,23 +1,22 @@
 import React from 'react'
+import $ from 'jquery';
+import { Link } from 'react-router-dom';
 
 
 
-function Card() {
+function Card({product}) {
   
-
+  $(document).ready(function(){
+    $(".wish-icon i").click(function(){
+        $(this).toggleClass("fa-heart fa-heart-o");
+    });
+});
   return (
     <div>
+<div>
 
-         <div>
-        <meta charSet="utf-8" />
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-       
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Open+Sans" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-      </div>
      <div className="container">
+      
         <div className="row">
           <div className="col-md-12">
             <h2>company name</h2>
@@ -30,19 +29,21 @@ function Card() {
               </ol>   
               {/* Wrapper for carousel items */}
               <div className="carousel-inner">
+                
                 <div className="item active">
                   <div className="row">
                     <div className="col-sm-3">
                       <div className="thumb-wrapper">
                         <span className="wish-icon"><i className="fa fa-heart-o" /></span>
                         <div className="img-box">
-                          <img src="/examples/images/products/ipad.jpg" className="img-responsive" alt="" />									
+                          <img src="https://www.talos.tn/30065-large_default/pack-de-12-bouteille-d-eau-tijen-05l.jpg" className="img-responsive" alt="" />									
                         </div>
+
                         <div className="thumb-content">
-                          <h4>Apple iPad</h4>									
+                          <h4>Mineral Water</h4>									
       
-                          <p className="item-price"><strike>$400.00</strike> <b>$369.00</b></p>
-                          <a href="#" className="btn btn-primary">Add to Cart</a>
+                          <p className="item-price">20 bottles <b>12 DNT</b></p>
+                          <Link to="/product" >  <a href="#" className="btn btn-primary">More Details</a> </Link>
                         </div>						
                       </div>
                     </div>
@@ -306,10 +307,12 @@ function Card() {
               <a className="carousel-control right" href="#myCarousel" data-slide="next">
                 <i className="fa fa-angle-right" />
               </a>
+              </div>
             </div>
           </div>
         </div>
     </div>
+    
     </div>
   )
 }

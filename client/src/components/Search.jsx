@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
+import { useNavigate } from 'react-router-dom';
 
 function Search() {
     const [product,setProduct]=useState('')
+    const navigate = useNavigate()
+
     const onChange=(e)=>{
         setProduct(e.target.value)
     }
@@ -16,21 +19,19 @@ function Search() {
         // );
       // }
   return (
-    <div>
-           <select className="all" >
-              <option>all categories</option>
+
+<div className='search' >
+  
+       <select  className="all">
+             <option id='categ'>All categories</option>
               <option>food</option>
-              <option>electroniques</option>
-              <option>accessoires</option>
-
-
+              <option onClick={() => navigate("/elec")}>Electronic</option>
+              <option>accessoires</option> 
             </select>  
-            <input className="input-s" type="text" placeholder="I'm searching for ..."  onChange={onChange}/>
-            
-          <ManageSearchIcon/>
-       
+           <input className="input-s" type="text" placeholder="I'm searching for ..."  onChange={onChange}/> 
+           <ManageSearchIcon onClick={() => navigate("/elec")} />
+      
    
-          
     </div>
   )
 }
