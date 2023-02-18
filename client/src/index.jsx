@@ -33,22 +33,22 @@ const App = () => {
 
   return (
     <div className='App'>
+{/* <ProductList/> */}
 
-      <Profile/>
-   {/* <Router>
+   <Router>
    <Navbar/>
 
     <Routes>
     <Route exact path="/" element={<Home/>}/>
     <Route exact path="/product" element={<ProductDetails/>}/>
     <Route exact path="/fav" element={<Favorite/>}/>
-    <Route exact path="/elec" element={ <Electronic/>}/> */}
+    <Route exact path="/elec" element={ <Electronic/>}/> 
     {/* <Route exact path="/ProductList" element={<ProductList/>}/> */}
-    {/* <Route path='/' element={<Signeupf/>} /> */}
-    {/* <Route path='/loginf' element={<Signf setcompanyName={setcompanyName}/>} /> */}
-    {/* </Routes> */}
+    {/* <Route path='/' element={<Signeupf/>} />
+    <Route path='/loginf' element={<Signf setcompanyName={setcompanyName}/>} /> */}
+    </Routes>
   
-{/* </Router> */}
+ </Router>
     </div>
   )
 }
