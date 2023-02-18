@@ -14,6 +14,7 @@ const User = require('./routes/users.js');
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({extended: true}));
+app.use(express.static(__dirname + "/../client/dist"));
 
 //Add Routes to the middleware handling path, specifying the respective URL path
 app.use('/api/fournisseur', Fournisseur);
@@ -23,7 +24,7 @@ app.use('/api/user', User);
 const port = 3000;
 
 app.listen(port, () => {
-    console.log(`Server listening localhost:${port}`);
+    console.log(`Server listening http://localhost:3000/`);
 })
 
 module.exports = app; // export the express app.
