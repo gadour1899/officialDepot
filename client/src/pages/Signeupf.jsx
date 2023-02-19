@@ -12,6 +12,7 @@ const [email,setemail]=useState("")
 const [password,setpassword]=useState("")
 const [adresse,setadresse]=useState("")
 const[image,setImage]=useState("")
+const[phonen,setphonen]=useState("")
 const [redirect , setRedirect]=useState(false)
 const navigate=useNavigate()
 
@@ -37,11 +38,13 @@ const handeladd=()=>{
     password:password,
     image:image,
     adress: adresse,
+    phoneNumber:phonen
   }
   )
   .then((result)=>{console.log(result)
   navigate("/loginf")})
   .catch((err)=>{console.log(err)})
+  navigate("/loginf")
   setRedirect(true)
 }
 
@@ -78,13 +81,8 @@ const handeladd=()=>{
   //                onChange={(e)=>{setadresse(e.target.value)}}/><br/>
                   
 
-                 
 
 
-            
-        
-  //       <p onClick={()=>navigate("/loginf")}><button  id='butF' onClick={handeladd}>add here </button></p>
-  //   </div>
   <div className="login">
       <div className="bg-img">
         <form action="/action_page.php" className="contenup">
@@ -143,6 +141,9 @@ const handeladd=()=>{
           </button>
         </form>
       </div>
+
+        <button  id='butF' onClick={handeladd}>add here </button>
+
     </div>
   )
 }
