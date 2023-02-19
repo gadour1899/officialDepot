@@ -11,9 +11,9 @@ router.get('/getAllp', product.getAllProduct);
 // to add a new product
 router.post('/addp', product.addProduct)
 // to update an existing product
-router.put('/updatep/:idP', product.updateProduct);
+router.put('/updatep/:id', product.updateProduct);
 // to delete an existing product
-router.delete('/deletep/:idP', product.deleteProduct);
+router.delete('/deletep/:id', product.deleteProduct);
 
 
 module.exports = router;

@@ -3,7 +3,6 @@ const { Sequelize, DataTypes } = require('sequelize');
 const config = require('./config');
 
 
-
 //Created a Sequelize instance and passed the appropriate parameters separately,
 //database, user and password fields coming from the config files.
 const sequelize = new Sequelize(config.DATABASE, config.USER,config.PASSWORD, {

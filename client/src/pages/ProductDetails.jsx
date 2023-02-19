@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-function ProductDetails() {
+function  ProductDetails() {
   const [quantity,setQuantity] =useState(20)
 
   const increment=()=>{
