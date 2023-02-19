@@ -72,7 +72,7 @@ useEffect(()=>{(
     <Route path='/loginf' element={<Signf setcompanyName={setcompanyName}/>}/>
     <Route exact path='/dash' element={< Main/>}/>
     <Route exact path="/product" element={<ProductDetails/>}/>
-    <Route exact path="/fav" element={<Favorite/>}/>
+    <Route exact path="/fav" element={<Favorite/>}/>  
     <Route exact path="/elec" element={ <Electronic/>}/> 
     {/* iheb work has conflit */}
     </Routes>
