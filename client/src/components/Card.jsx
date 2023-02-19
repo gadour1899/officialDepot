@@ -5,7 +5,16 @@ import { Link } from 'react-router-dom';
 
 function Card(props) {
 
+  // const [items, setItems] = useState([]);
 
+  // const handleAddItem = (newItem) => {
+  //   setItems([...items, newItem]);
+  // };
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const newItem = props ;
+    // handleAddItem (newItem);}
 
   console.log("card props ", props);
   $(document).ready(function(){
@@ -36,7 +45,7 @@ function Card(props) {
                   {props.data.map((product, index) => ( 
                     <div key={index} className="col-sm-3">
                       <div className="thumb-wrapper">
-                        <span className="wish-icon"><i className="fa fa-heart-o" /></span>
+                        <span className="wish-icon"><i className="fa fa-heart-o" /*onClick={handleSubmit} *//></span>
                         <div className="img-box">
                           <img src={product.image} className="img-responsive" alt="" />									
                         </div>

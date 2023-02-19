@@ -39,6 +39,7 @@ function  ProductDetails(props) {
         <div className="product-image">
           <img src={props.data.image} alt="" />
           <div className="info">
+          <h2> Description</h2>
             <ul className="deslis">
               <li>
                 <h4>Brand : {props.data.category}</h4>

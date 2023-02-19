@@ -17,14 +17,14 @@ function Navbar() {
       <nav className="navigation">
     
 
-        <div className="logo ">
-            <img className="h-8 " src="./logo.jpg" alt="" onClick={() => navigate("/")}/>
+        <div >
+            <img  className="logo " src="./logo.jpg" alt="" onClick={() => navigate("/")}/>
        </div> 
           {/* search */}
          <Search/>
           {/* buttons */}
           <div className="icons">
-          <div className='iconN'><PersonOutlineIcon onClick={() => navigate("/singup")} /></div>
+          <div className='iconN'><PersonOutlineIcon onClick={() => navigate("/signf")} /></div>
          <div className='iconN'><FavoriteBorderIcon onClick={() => navigate("/fav")}/></div> 
         <div className='iconN'><LocalGroceryStoreIcon onClick={() => navigate("/fpannier")}/></div>
           </div>

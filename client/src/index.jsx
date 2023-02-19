@@ -13,7 +13,7 @@ import ProductDetails from './pages/ProductDetails.jsx'
 import Favorite from './pages/Favorite.jsx';
 import Electronic from './pages/Electronic.jsx';
 import Search from './components/Search.jsx';
-// import Signf from './Signf.jsx'
+import Signf from './pages/Signf.jsx'
 // import Signeupf from './pages/Signeupf.jsx'
 
 
@@ -94,9 +94,10 @@ let dataSearch = (value)=>{
      {/* <Route exact path="/ProductList" element={<ProductList/>}/> */}
     <Route exact path="/" element={<Home setSingleProduct={setSingleProduct} data = {products}/>}/>
     <Route exact path="/product" element={<ProductDetails data={singleProduct}/>}/>
-    <Route exact path="/fav" element={<Favorite/>}/>
+    <Route exact path="/fav" element={<Favorite data = {products}/>}/>
     <Route exact path="/elec" element={ <Electronic/>}/>
     <Route exact path="/search" element={<Search dataFiltred={dataSearch}/>}/> 
+    <Route path='/signf' element={<Signf />} />
     </Routes>
    </Router>
     </div>

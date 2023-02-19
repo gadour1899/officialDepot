@@ -17,7 +17,7 @@ function Search(props) {
 
 <div className='search' >
        <select  className="all">
-             <option id='categ'>All categories</option>
+             <option >All categories</option>
               <option>food</option>
               <option onClick={() => navigate("/elec")}>Electronic</option>
               <option>accessoires</option> 
