@@ -77,5 +77,10 @@ deleteProduct:async (req, res)=> {
         id:req.params.id}})
 
     res.status(200).send('Product deleted')
+},
+
+getOne:async (req, res)=> {
+    const product = await Product.findOne({ where: { id: req.params.id } })
+    res.status(200).send(product)
 }
 }
