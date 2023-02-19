@@ -7,8 +7,6 @@ const bcrypt=require('bcrypt')
 const jwt=require("jsonwebtoken")
 
 
-
-
 module.exports = {
 
 // method to add a new fournisseur
@@ -143,6 +141,3 @@ getfour:async (req, res) => {
       console.log(error);}
    }
 }
-
-
-

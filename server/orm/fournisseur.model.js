@@ -10,11 +10,8 @@ module.exports = (sequelize, DataTypes) => {
         image:{ type:DataTypes.STRING},
         
         adress:{ type:DataTypes.STRING},
-        phoneNumber:{ type:DataTypes.INTEGER},
-        
-       
-    }
-    ,{timestamps:true});
+        phoneNumber:{ type:DataTypes.INTEGER},  
+    }  ,{timestamps:true});
   
     return fournisseur;
   };
