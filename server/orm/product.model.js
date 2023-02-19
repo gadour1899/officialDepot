@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
       description: {type: DataTypes.STRING},
       category: {type: DataTypes.STRING},
       quantity: {type: DataTypes.INTEGER}, 
+      fournisseurId:{
+        type:DataTypes.INTEGER,
+        foreignKey:true,
+      },
     });
     return product;
   };

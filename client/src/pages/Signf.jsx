@@ -38,6 +38,7 @@ export const Signf = () => {
 
             <input type="password"
             placeholder='mot de passe'
+            
             onChange={(e)=>{setPassword(e.target.value)}} /><br />
 
         </form>

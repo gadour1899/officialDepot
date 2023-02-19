@@ -1,11 +1,12 @@
 import React, { useEffect, useState ,component} from 'react'
 import ReactDOM from 'react-dom'
 import axios from 'axios'
-// import SignUpUser from './components/SignUpUser.jsx'
-// import Profile from './components/Profile.jsx'
-// import Singin from './components/Singin.jsx'
-// import Profile from './DashBoard/FournisseurProfile/Profile.jsx';
-// import ProductList from './DashBoard/ProductList/ProductList.jsx'
+
+import SignUpUser from './components/SignUpUser.jsx'
+import Singin from './components/Singin.jsx'
+import Prof from './DashBoard/FournisseurProfile/Prof.jsx';
+import ProductList from './DashBoard/ProductList/ProductList.jsx'
+import Main from './DashBoard/main.jsx'
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import Navbar from '../src/components/Navbar.jsx'
 import Home from './pages/Home.jsx'
@@ -15,14 +16,7 @@ import Electronic from './pages/Electronic.jsx';
 
 import Signf from './pages/Signf.jsx'
 import Signeupf from './pages/Signeupf.jsx'
-import Main from './DashBoard/Main.jsx'
-
 import Search from './components/Search.jsx';
-
-  
-
-
-
 const App = () => {
 const [name,setName]=useState('')
 const [companyname,setcompanyName]=useState('')
@@ -88,27 +82,29 @@ let dataSearch = (value)=>{
   return (
     <div className='App'>
 
+
 {/* <ProductList/> */}
       <Router>
       <Navbar/>
       <Routes> 
-      {/* <Route path='/profile' element={<Profile/>} /> 
-      <Route path='/up' element={<SignUpUser/>} />
-      <Route path='/login' element={<Singin setName={setName}/>} /> */} 
-
+      {/* <Route path='/up' element={<SignUpUser/>} />
+      <Route path='/login' element={<Singin setName={setName}/>} />  */}
+{/* 
        
-    {/* <Route exact path="/ProductList" element={<ProductList/>}/> */}
+   <Route exact path ="/pro" element={<Prof/>}/>
+    <Route exact path="/ProductList" element={<ProductList/>}/>
 
     <Route exact path="/search" element={<Search dataFiltred={dataSearch}/>}/> 
     <Route exact path="/product" element={<ProductDetails data={singleProduct}/>}/>
-    <Route exact path="/" element={<Home setSingleProduct={setSingleProduct} data = {products}/>}/>
+    <Route exact path="/" element={<Home setSingleProduct={setSingleProduct} data = {products}/>}/> */}
     <Route path='/up' element={<Signeupf/>} /> 
     <Route path='/loginf' element={<Signf setcompanyName={setcompanyName}/>}/>
     <Route exact path='/dash' element={< Main/>}/>
     <Route exact path="/product" element={<ProductDetails/>}/>
     <Route exact path="/fav" element={<Favorite/>}/>  
     <Route exact path="/elec" element={ <Electronic/>}/> 
-
+    
+    
     </Routes>
    </Router>
 
