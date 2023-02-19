@@ -1,26 +1,31 @@
 import React, { useEffect, useState ,component} from 'react'
 import ReactDOM from 'react-dom'
-import Basket from "./Basket.jsx"
+
 import axios from 'axios'
-// import SignUpUser from './components/SignUpUser.jsx'
-// import Profile from './components/Profile.jsx'
-// import Singin from './components/Singin.jsx'
-// import Profile from './DashBoard/FournisseurProfile/Profile.jsx';
-// import ProductList from './DashBoard/ProductList/ProductList.jsx'
+import SignUpUser from './components/SignUpUser.jsx'
+import Profile from './components/Profile.jsx'
+import Singin from './components/Singin.jsx'
+
+
 
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import Home from './pages/Home.jsx'
 import ProductDetails from './pages/ProductDetails.jsx'
 
-// import Signf from './Signf.jsx'
+
 import Navbar from '../src/components/Navbar.jsx'
-// import Signeupf from './pages/Signeupf.jsx';
+
 // import Profile from './DashBoard/FournisseurProfile/Profile.jsx';
 import ProductList from './DashBoard/ProductList/ProductList.jsx'
 
 import Favorite from './pages/Favorite.jsx';
 import Electronic from './pages/Electronic.jsx';
+import Signf from './Signf.jsx'
+import Signeupf from './pages/Signeupf.jsx'
+import Main from './DashBoard/Main.jsx'
+import Basket from "./Basket.jsx"
 import Search from './components/Search.jsx';
+
 
 
 
@@ -31,6 +36,7 @@ const [products,setProducts]=useState([])
 const [change,setChange]=useState(false); 
 const [singleProduct, setSingleProduct]= useState([])
 
+const [basket, setBasket] = useState([]);
 
   useEffect(()=>{(
 
@@ -77,6 +83,9 @@ useEffect(()=>{(
 },[])
 
 
+
+
+
 // fetching data
 useEffect(() => {
   axios.get('/api/product/getAllp')
@@ -98,26 +107,29 @@ let dataSearch = (value)=>{
   return (
     <div className='App'>
 
+
  <Router>
  <Navbar/>
   <Routes>
      {/* <ProductList/> */}
-        {/* <Route path='/profile' element={<Profile/>} /> 
+        <Route path='/profile' element={<Profile/>} /> 
       <Route path='/up' element={<SignUpUser/>} />
-      <Route path='/login' element={<Singin setName={setName}/>} /> */} 
-       {/* 
-  
+      <Route path='/login' element={<Singin setName={setName}/>} /> 
+       
+   <Route path='/up' element={<Signeupf/>} /> 
+    <Route path='/loginf' element={<Signf setcompanyName={setcompanyName}/>}/>
+    <Route exact path='/dash' element={< Main/>}/>
      <Route exact path="/" element={<Home setSingleProduct={setSingleProduct} data = {products}/>}/>
     <Route exact path="/product" element={<ProductDetails data={singleProduct}/>}/>
-    
+    <Route exact path="/ProductList" element={<ProductList/>}/>
     <Route exact path="/search" element={<Search dataFiltred={dataSearch}/>}/> 
-  {/* <Route exact path="/fav" element={<Favorite/>}/> */}
-  {/* <Route exact path="/elec" element={ <Electronic/>}/> */}
-  {/* <Route exact path="/ProductList" element={<ProductList/>}/> */}
-  {/* <Route path='/' element={<Signeupf/>} />
-  <Route path='/loginf' element={<Signf setcompanyName={setcompanyName}/>} /> */}
+  <Route exact path="/fav" element={<Favorite/>}/>
+  <Route exact path="/elec" element={ <Electronic/>}/>
+  <Route exact path ="/basket" element={<Basket/>}/>
+ 
+  <Route path='/loginf' element={<Signf setcompanyName={setcompanyName}/>} /> 
   
-<Route exact path='/Basket'element={<Basket delete={handleDel}/>}/>
+
   </Routes>
 
 </Router>

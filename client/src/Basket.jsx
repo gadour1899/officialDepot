@@ -1,27 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+
 
 const Basket = (props) => {
   const [product, setProduct] = useState([]);
-  const [basket, setBasket] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-
-  useEffect(() => {
-    // Fetch products from API and set them to state
-    axios
-      .get('/api/product/getAllp')
-      .then((res) => {
-        setProduct(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
-  const addProductToBasket = (product) => {
-    // Add a product to the basket
-    setBasket([...basket, product]);
-  };
+  const [basket,setBasket]=useState([])
 
   const removeProductFromBasket = (productId) => {
     // Remove a product from the basket
@@ -39,7 +22,7 @@ const Basket = (props) => {
   useEffect(() => {
     // Recalculate total price whenever the basket changes
     calculateTotalPrice();
-  }, [basket]);
+  }, [props.basket]);
 
   return (
     <div>
@@ -69,7 +52,7 @@ const Basket = (props) => {
         <div className="checkout">
           <div className="total">
             <div>
-              <div className="Subtotal">Sub-Total</div>
+              <div className="Subtotal">Sub-Total$</div>
             </div>
             <div className="total-amount">{totalPrice}</div>
           </div>
