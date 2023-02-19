@@ -1,5 +1,14 @@
 const { Sequelize, DataTypes } = require('sequelize');
-const config = require('../orm/config/config.js');
+
+
+
+
+
+
+
+const config = require('../orm/config.js');
+
+
 
 //Created a Sequelize instance and passed the appropriate parameters separately,
 //database, user and password fields coming from the config files.
@@ -7,6 +16,7 @@ const sequelize = new Sequelize(config.DATABASE, config.USER,config.PASSWORD, {
     HOST: 'localhost',
     dialect: 'mysql'
   });
+
 
 //Create and export a db object which holds the sequelize models,
 //with the respective associations.

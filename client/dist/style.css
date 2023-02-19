@@ -1,33 +1,14 @@
-.card {
-    box-shadow: 4px 8px 8px 8px rgba(4, 250, 4, 0.2);
-    max-width: 500px;
-    margin: auto;
-    text-align: center;
-    height: 290px;
-    border-radius: solid 2px;
-    margin-top: 200px;
-  }
-  
-  .title {
-    color: grey;
-    font-size: 50px;
-  }
-  
-  
-  a {
-    text-decoration: none;
-    font-size: 22px;
-    color: black;
-  }
+
 
 /*nav*/
+
 .navigation{
-  display: flex;
-  justify-content: space-between;
-  padding-top: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
- 
-  
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+   
+    
 }
 .editbutton {
   width: 73px;
@@ -590,6 +571,117 @@ font-size: 120%;
 font-size: larger;
 }
 
+.CartContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f5f5f5;
+}
+
+.Header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.Heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.Cart-Items {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.image-box {
+  margin-right: 20px;
+}
+
+.fraise {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.about {
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.desc {
+  font-size: 14px;
+  color: #777;
+}
+
+.prices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 20px;
+}
+
+.amount {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.remove {
+  cursor: pointer;
+  font-size: 14px;
+  color: #007bff;
+}
+
+.remove:hover {
+  text-decoration: underline;
+}
+
+button {
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0f0f0f;
+}
+
+.checkout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.total {
+  display: flex;
+  align-items: center;
+}
+
+.Subtotal {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.total-amount {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-left: 10px;
+}
 
 /* CSS for the profile component for the dashboard */
 
@@ -626,4 +718,8 @@ a {
 
 button:hover, a:hover {
   opacity: 0.7;
+}
+
+.buttoni:hover {
+  background-color: #1b1b1d;
 }

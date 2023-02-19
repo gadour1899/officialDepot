@@ -26,7 +26,7 @@ function Navbar() {
           <div className="icons">
           <div className='iconN'><PersonOutlineIcon onClick={() => navigate("/loginf")} /></div>
          <div className='iconN'><FavoriteBorderIcon onClick={() => navigate("/fav")}/></div> 
-        <div className='iconN'><LocalGroceryStoreIcon onClick={() => navigate("/fpannier")}/></div>
+        <div className='iconN'><LocalGroceryStoreIcon onClick={() => navigate("/basket")}/></div>
           </div>
        </nav>
 

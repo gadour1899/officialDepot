@@ -1,10 +1,10 @@
 import React , {useState,useEffect} from 'react'
 import $ from 'jquery';
-import { Link } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 
 
 function Card(props) {
-
+  
 
 
   console.log("card props ", props);
@@ -43,7 +43,8 @@ function Card(props) {
                         <div className="thumb-content">
                           <h4>{product.name}</h4>									
                           <p className="item-price"> {product.quantity} <b>{product.price} DNT</b></p>
-                          <Link to="/product" ><a onClick ={()=>{props.setSingleProduct(product)
+                          <Link to="/product" >
+                          <a onClick ={()=>{props.setSingleProduct(product) 
                               }} href="#" className="btn btn-primary">More Details</a> </Link> 
                         </div>		
                       </div> 
