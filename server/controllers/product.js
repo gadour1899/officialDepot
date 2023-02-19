@@ -16,7 +16,7 @@ module.exports = {
 
     addProduct:async (req, res)=> {
          
-const {name, description,price, quantity,image,category}=req.body;
+const {name, description,price, quantity,image,category,foreignKey}=req.body;
 
 try{
     const result = await cloudinary.uploader.upload(image,{
@@ -32,6 +32,7 @@ try{
                 // url:result.secure_url,
             ,
             category,
+            foreignKey
         }
 
 )
