@@ -12,9 +12,15 @@ import Home from './pages/Home.jsx'
 import ProductDetails from './pages/ProductDetails.jsx'
 import Favorite from './pages/Favorite.jsx';
 import Electronic from './pages/Electronic.jsx';
+
+import Signf from './Signf.jsx'
+import Signeupf from './pages/Signeupf.jsx'
+import Main from './DashBoard/Main.jsx'
+
 import Search from './components/Search.jsx';
-// import Signf from './Signf.jsx'
-// import Signeupf from './pages/Signeupf.jsx'
+
+
+
 
 
 const App = () => {
@@ -81,24 +87,31 @@ let dataSearch = (value)=>{
   
   return (
     <div className='App'>
+
+{/* <ProductList/> */}
       <Router>
       <Navbar/>
       <Routes> 
       {/* <Route path='/profile' element={<Profile/>} /> 
       <Route path='/up' element={<SignUpUser/>} />
       <Route path='/login' element={<Singin setName={setName}/>} /> */} 
-       {/* 
-    <Route path='/' element={<Signeupf/>} />
-    <Route path='/loginf' element={<Signf setcompanyName={setcompanyName}/>} />
-    */}
-     {/* <Route exact path="/ProductList" element={<ProductList/>}/> */}
-    <Route exact path="/" element={<Home setSingleProduct={setSingleProduct} data = {products}/>}/>
-    <Route exact path="/product" element={<ProductDetails data={singleProduct}/>}/>
-    <Route exact path="/fav" element={<Favorite/>}/>
-    <Route exact path="/elec" element={ <Electronic/>}/>
+
+       
+    {/* <Route exact path="/ProductList" element={<ProductList/>}/> */}
+
     <Route exact path="/search" element={<Search dataFiltred={dataSearch}/>}/> 
+    <Route exact path="/product" element={<ProductDetails data={singleProduct}/>}/>
+    <Route exact path="/" element={<Home setSingleProduct={setSingleProduct} data = {products}/>}/>
+    <Route path='/up' element={<Signeupf/>} /> 
+    <Route path='/loginf' element={<Signf setcompanyName={setcompanyName}/>}/>
+    <Route exact path='/dash' element={< Main/>}/>
+    <Route exact path="/product" element={<ProductDetails/>}/>
+    <Route exact path="/fav" element={<Favorite/>}/>  
+    <Route exact path="/elec" element={ <Electronic/>}/> 
+
     </Routes>
    </Router>
+
     </div>
   )
 
