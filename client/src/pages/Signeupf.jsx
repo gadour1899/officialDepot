@@ -78,9 +78,10 @@ const handeladd=()=>{
                  onChange={(e)=>{setadresse(e.target.value)}}/><br/>
                  
         </form>
-            <button  id='button'>add here </button>
 
-          <button  id='butF' onClick={handeladd}>add here </button>
+            
+        
+        <p onClick={()=>navigate("/loginf")}><button  id='butF' onClick={handeladd}>add here </button></p>
     </div>
   )
 }

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 
-function Profile(props) {
+function Prof(props) {
  
 console.log("Props of profile",props)
 
@@ -14,7 +14,7 @@ console.log("Props of profile",props)
   return (
     
     <div>
-
+ 
 <div class="cardDash">
      <div> <img src="img.jpg"  />
   <h1>{props.Fournisseur[0].manager}</h1>
@@ -36,4 +36,4 @@ console.log("Props of profile",props)
   )
 }
 
-export default Profile
+export default Prof ;

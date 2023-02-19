@@ -1,5 +1,5 @@
 import React ,{useEffect,useState} from 'react'
-import Profile from './FournisseurProfile/Profile.jsx';
+import Prof from '..//DashBoard/FournisseurProfile/Prof.jsx'
 import ProductList from './ProductList/ProductList.jsx';
 import axios from 'axios'
 
@@ -29,7 +29,7 @@ const onChangeView=(nav)=>{
   const changeView =()=>{
     
   if (view === "profile"){
-      return <Profile  Fournisseur={Fournisseur} />
+      return <Prof  Fournisseur={Fournisseur} />
     }else if (view === "productList"){
      return <ProductList  />
     } }
