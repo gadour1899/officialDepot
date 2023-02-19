@@ -4,7 +4,7 @@ import Cases from './Cases.jsx';
 import PopOutUpdate from './PopOutUpdate.jsx';
 
 
-const ProductList = () => {
+const ProductList = (props) => {
     const [products,setProducts]=useState([])
     const [change,setChange]=useState(false); 
     const [openForm,setOpenForm]=useState(false); // to open creating update form
@@ -78,7 +78,7 @@ const onDelete =(product) => {
     <div>
 
 <button onClick={()=>onClick()} >Create a new product</button>
-{openForm && <Cases change={change} setChange={setChange}/>}
+{openForm && <Cases change={change} setChange={props.setChange}/>}
 
 
     <table id="customers">

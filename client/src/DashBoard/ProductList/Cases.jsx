@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom'
 
 const Cases = (props) => {
 
@@ -11,7 +12,7 @@ const Cases = (props) => {
  const [category,setCategory]=useState("");
  const [quantity,setQuantity]=useState(0);
  const [image,setImage]=useState("");
- 
+ const navigate = useNavigate();
 
 
 const handleChangeName=e=>{
@@ -49,11 +50,6 @@ const handleChangeQuantity=e=>{
 };
 
 
-
-
-
-
-
 const handleImage =e=>{
   e.preventDefault();
   const file= e.target.files[0];
@@ -72,12 +68,12 @@ const submitForm=()=>{
 
   let data={
     
-      "name":name,
-      "price":price,
-      "image":image,
-      "description":description,
-      "category":category,
-      "quantity":quantity,
+      name:name,
+      price:price,
+      image:image,
+      description:description,
+      category:category,
+      quantity:quantity,
     
   }
 
@@ -101,8 +97,7 @@ const submitForm=()=>{
 <input type="text" name="category"   onChange={handleChangeCategory} placeholder='Product Category ..?' />
 <input type="number" name="quantity" onChange={handleChangeQuantity} placeholder='Product quantity ..?' />
 <input type="file" name="image" onChange={handleImage} placeholder='Product Image ..?' />
-<button type="submit" onClick={submitForm}>Create</button>
-
+<p onClick={()=>navigate()}><button type="submit" onClick={submitForm}>Create</button></p>
 </form>
   )
 }

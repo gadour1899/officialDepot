@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Card from './Card.jsx'
 
 function ProductList() {
+  
     const products=useSelector(
         (state)=>state.productReducer.products
     )

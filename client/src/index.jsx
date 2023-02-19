@@ -100,10 +100,9 @@ let dataSearch = (value)=>{
       <Route exact path="/ProductList" element={<ProductList/>}/>
       <Route path='/up' element={<Signeupf/>} /> 
       <Route path='/loginf' element={<Signf setcompanyName={setcompanyName}/>}/>
-      <Route exact path='/dash' element={< Main/>}/>
+      <Route exact path='/dash' element={< Main setChange={setChange}/>}/>
       </Routes>
       </Router>
-
     </div>
   )
 }

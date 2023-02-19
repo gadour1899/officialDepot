@@ -3,7 +3,7 @@ import Prof from '..//DashBoard/FournisseurProfile/Prof.jsx'
 import ProductList from './ProductList/ProductList.jsx';
 import axios from 'axios'
 
-const main=()=> {
+const main=(props)=> {
     const [view,setView]=useState("")
     const [Fournisseur,setFournisseur] = useState([])   
     const [four,setfour]=useState('')
@@ -50,7 +50,7 @@ const onChangeView=(nav)=>{
   if (view === "profile"){
       return <Prof  Fournisseur={Fournisseur} />
     }else if (view === "productList"){
-     return <ProductList  />
+     return <ProductList setChange={props.setChange}  />
     } }
   
   return (
@@ -73,8 +73,7 @@ const onChangeView=(nav)=>{
   </div>
 </nav> 
 
- <h1> haya si zebi {four.CompanyName} </h1>
-
+ <h1> hi {four.CompanyName} </h1>
 {changeView()}
 </div>
 )
