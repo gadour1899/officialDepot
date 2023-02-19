@@ -4,9 +4,29 @@ import ProductList from './ProductList/ProductList.jsx';
 import axios from 'axios'
 
 const main=()=> {
- 
-const [view,setView]=useState("")
- const [Fournisseur,setFournisseur] = useState([])
+    const [view,setView]=useState("")
+    const [Fournisseur,setFournisseur] = useState([])   
+    const [four,setfour]=useState('')
+
+
+
+const config = {
+    headers:{
+      jwt: document.cookie.slice(4)
+    }
+  };
+useEffect(()=>{
+    axios.get("http://localhost:3000/api/fournisseur/tokenf",config)
+      .then(res=>{
+              setfour(res.data)
+              console.log("current fournisseur",res.data)
+          })
+      .catch(err=>{
+              console.log(err)
+          })
+},[])
+
+
 
 
 useEffect(() => {
@@ -52,6 +72,9 @@ const onChangeView=(nav)=>{
     </ul>
   </div>
 </nav> 
+
+ <h1> haya si zebi {four.CompanyName} </h1>
+
 {changeView()}
 </div>
 )

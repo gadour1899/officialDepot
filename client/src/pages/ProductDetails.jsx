@@ -6,6 +6,10 @@ function  ProductDetails(props) {
   console.log("product DETAILS",props);
   const [quantity,setQuantity] =useState(0)
 
+
+
+
+  console.log("product DETAILS",props);
   const increment=()=>{
     setQuantity(quantity+20)
   }
