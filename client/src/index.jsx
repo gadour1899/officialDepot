@@ -1,6 +1,6 @@
 import React, { useEffect, useState ,component} from 'react'
 import ReactDOM from 'react-dom'
-// import axios from 'axios'
+import axios from 'axios'
 // import SignUpUser from './components/SignUpUser.jsx'
 // import Profile from './components/Profile.jsx'
 // import Singin from './components/Singin.jsx'
@@ -12,6 +12,7 @@ import Home from './pages/Home.jsx'
 import ProductDetails from './pages/ProductDetails.jsx'
 import Favorite from './pages/Favorite.jsx';
 import Electronic from './pages/Electronic.jsx';
+import Search from './components/Search.jsx';
 // import Signf from './Signf.jsx'
 // import Signeupf from './pages/Signeupf.jsx'
 
@@ -19,6 +20,11 @@ import Electronic from './pages/Electronic.jsx';
 const App = () => {
 const [name,setName]=useState('')
 const [companyname,setcompanyName]=useState('')
+const [products,setProducts]=useState([])
+const [change,setChange]=useState(false); 
+const [singleProduct, setSingleProduct]= useState([])
+
+
 
   useEffect(()=>{(
       async()=>{
@@ -53,6 +59,25 @@ useEffect(()=>{(
     }
   )()
 },[])
+
+
+// fetching data
+useEffect(() => {
+  axios.get('/api/product/getAllp')
+  .then(result=>{console.log(result)
+  setProducts(result.data)})
+  .catch(err=>console.log(err))
+}, [change])
+
+const getOne=(id)=>{
+  axios.get(`http://localhost:3000/api/product/one/${id}`)
+  .then (result=>{console.log(result)})
+}
+
+let dataSearch = (value)=>{
+  const newproduct= products.filter(e=>(e.name.toLowerCase()).includes(value.toLowerCase()))
+   setProducts(newproduct)
+ }
   
   return (
     <div className='App'>
@@ -67,10 +92,11 @@ useEffect(()=>{(
     <Route path='/loginf' element={<Signf setcompanyName={setcompanyName}/>} />
     */}
      {/* <Route exact path="/ProductList" element={<ProductList/>}/> */}
-    <Route exact path="/" element={<Home/>}/>
-    <Route exact path="/product" element={<ProductDetails/>}/>
+    <Route exact path="/" element={<Home setSingleProduct={setSingleProduct} data = {products}/>}/>
+    <Route exact path="/product" element={<ProductDetails data={singleProduct}/>}/>
     <Route exact path="/fav" element={<Favorite/>}/>
     <Route exact path="/elec" element={ <Electronic/>}/>
+    <Route exact path="/search" element={<Search dataFiltred={dataSearch}/>}/> 
     </Routes>
    </Router>
     </div>
