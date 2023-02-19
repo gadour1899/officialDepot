@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Basket from '../Basket.jsx';
 
+
 function ProductDetails(props) {
   const [quantity, setQuantity] = useState(props.data.quantity);
   const [show, setShow] = useState(false);
@@ -13,9 +14,10 @@ function ProductDetails(props) {
     setQuantity(quantity - 20);
   };
 
-  const addProductToBasket = (product) => {
-    props.setBasket([...props.basket, product]);
+  const addProductToBasket = (item) => {
+    props.setBasket([...props.basket, item]);
   };
+
 
   return (
     <div>
@@ -35,7 +37,8 @@ function ProductDetails(props) {
               <span className="shopping-cart">
                 <i className="fa fa-shopping-cart" aria-hidden="true" />
               </span>
-              <span className="buy">Add to basket</span>
+              <span className="buy" onClick={()=>addProductToBasket(props.data)}>Add to basket</span>
+
             </button>
           </div>
         </div>
@@ -44,12 +47,15 @@ function ProductDetails(props) {
           <div className="info">
             <ul className="deslis">
               <li>
+
                 <h4>Brand: {props.data.category}</h4>
               </li>
               <li>
+
                 <h4>More details: {props.data.description}</h4>
               </li>
             </ul>
+            
           </div>
         </div>
       </div>

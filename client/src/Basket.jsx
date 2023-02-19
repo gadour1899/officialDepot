@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 const Basket = (props) => {
   const [product, setProduct] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [basket,setBasket]=useState([])
+  const navigate = useNavigate();
+ 
 
   const removeProductFromBasket = (productId) => {
     // Remove a product from the basket
-    setBasket(basket.filter((product) => product.id !== productId));
+    props.setBasket(props.basket.filter((product) => product.id !== productId));
   };
 
   const calculateTotalPrice = () => {
     // Calculate the total price of all products in the basket
-    const totalPrice = basket.reduce((acc, product) => {
+    const totalPrice = props.basket.reduce((acc, product) => {
       return acc + product.price;
     }, 0);
     setTotalPrice(totalPrice);
@@ -30,7 +32,7 @@ const Basket = (props) => {
         <div className="Header">
           <h3 className="Heading">Shopping Cart</h3>
         </div>
-        {product.map((product) => (
+        {props.basket.map((product) => (
           <div key={product.id} className="Cart-Items">
             <div className="image-box">
               <img className="fraise" src={product.image} alt={product.name} />
@@ -44,8 +46,8 @@ const Basket = (props) => {
               <div className="remove" onClick={() => removeProductFromBasket(product.id)}>
                 <u>Remove</u>
               </div>
-              <button onClick={() => addProductToBasket(product)}>+</button>
-              <button>-</button>
+        
+             
             </div>
           </div>
         ))}
@@ -56,7 +58,7 @@ const Basket = (props) => {
             </div>
             <div className="total-amount">{totalPrice}</div>
           </div>
-          <button className="buttoni">Commander</button>
+          <button className="buttoni" onClick={()=>navigate('/login')}>Commander</button>
         </div>
       </div>
     </div>

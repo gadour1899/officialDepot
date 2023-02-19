@@ -7,12 +7,6 @@ import axios from 'axios'
 import Profile from './components/Profile.jsx'
 
 
-
-
-
-
-import SignUpUser from './components/SignUpUser.jsx'
-import Singin from './components/Singin.jsx'
 import Main from './DashBoard/main.jsx'
 
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
@@ -22,10 +16,11 @@ import Navbar from '../src/components/Navbar.jsx'
 import ProductList from './DashBoard/ProductList/ProductList.jsx'
 import Favorite from './pages/Favorite.jsx';
 import Electronic from './pages/Electronic.jsx';
-import Signf from './Signf.jsx'
+import Signf from './pages/Signf.jsx'
 import Signeupf from './pages/Signeupf.jsx'
 import Basket from "./Basket.jsx"
 import Search from './components/Search.jsx';
+import Singin from './components/Singin.jsx'
 
 
 
@@ -37,7 +32,6 @@ const [companyname,setcompanyName]=useState('')
 const [products,setProducts]=useState([])
 const [change,setChange]=useState(false); 
 const [singleProduct, setSingleProduct]= useState([])
-
 const [basket, setBasket] = useState([]);
 
   useEffect(()=>{(
@@ -116,21 +110,18 @@ let dataSearch = (value)=>{
         <Route path='/profile' element={<Profile/>} /> 
       {/* <Route path='/' element={<SignUpUser/>} /> */}
       <Route path='/login' element={<Singin setName={setName}/>} /> 
-       
+      <Route path='/upuser' element={<Singin setName={setName}/>} /> 
    <Route path='/up' element={<Signeupf/>} /> 
     <Route path='/loginf' element={<Signf setcompanyName={setcompanyName}/>}/>
     <Route exact path='/dash' element={< Main/>}/>
      <Route exact path="/" element={<Home setSingleProduct={setSingleProduct} data = {products}/>}/>
-    <Route exact path="/product" element={<ProductDetails data={singleProduct}/>}/>
+    <Route exact path="/product" element={<ProductDetails data={singleProduct} basket={basket}  setBasket={setBasket}/>}/>
     <Route exact path="/ProductList" element={<ProductList/>}/>
     <Route exact path="/search" element={<Search dataFiltred={dataSearch}/>}/> 
-  <Route exact path="/fav" element={<Favorite/>}/>
-  <Route exact path="/elec" element={ <Electronic/>}/>
-  <Route exact path ="/basket" element={<Basket/>}/>
+     <Route exact path="/fav" element={<Favorite/>}/>
+    <Route exact path="/elec" element={ <Electronic/>}/>
+  <Route exact path ="/basket" element={<Basket basket={basket}  setBasket={setBasket} />}/>
  
-  <Route path='/loginf' element={<Signf setcompanyName={setcompanyName}/>} /> 
-  
-
   </Routes>
 
 
