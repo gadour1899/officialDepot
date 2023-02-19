@@ -79,7 +79,8 @@ const handeladd=()=>{
                   
 
                  
-  //       </form>
+
+
             
         
   //       <p onClick={()=>navigate("/loginf")}><button  id='butF' onClick={handeladd}>add here </button></p>
@@ -89,7 +90,7 @@ const handeladd=()=>{
         <form action="/action_page.php" className="contenup">
           <h2> Sign Up</h2>
           <label htmlFor="psw">
-            <b>Company Name</b>
+            <b><i class="fa fa-home" aria-hidden="true"></i> Company Name</b>
           </label>
           <input
             type="text"
@@ -97,7 +98,7 @@ const handeladd=()=>{
             name="psw"
             onChange={(e)=>{setname(e.target.value),console.log(e.target.value)}}/>
             <label htmlFor="psw">
-            <b>Manager Name</b>
+            <b><i class="fa fa-user" aria-hidden="true"></i> Manager Name</b>
           </label>
           <input
             type="text"
@@ -105,7 +106,7 @@ const handeladd=()=>{
             name="psw"
             onChange={(e)=>{setmanger(e.target.value)}}/>
           <label htmlFor="email">
-            <b>Email</b>
+            <b><i class="fa fa-envelope" aria-hidden="true"></i> Email</b>
           </label>
           <input
             type="text"
@@ -113,7 +114,7 @@ const handeladd=()=>{
             name="email"
             onChange={(e)=>{setemail(e.target.value)}} />
           <label htmlFor="psw">
-            <b>Password</b>
+            <b><i class="fa fa-key" aria-hidden="true"></i> Password</b>
           </label>
           <input
             type="password"
@@ -121,7 +122,7 @@ const handeladd=()=>{
             name="psw"
             onChange={(e)=>{setpassword(e.target.value)}}/>
             <label htmlFor="psw">
-            <b>Adress</b>
+            <b><i class="fa fa-map-marker" aria-hidden="true"></i> Adress</b>
           </label>
           <input
             type="text"

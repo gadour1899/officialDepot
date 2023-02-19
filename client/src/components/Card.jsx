@@ -6,16 +6,16 @@ import Favorite from '../pages/Favorite.jsx';
 
 function Card(props) {
 
-  const [items, setItems] = useState([]);
   const [show, setShow] = useState(true);
 
   const handleAddItem = (newItem) => {
-    setItems([...items, newItem]);
+    console.log("newitem",newItem);
+    props.setItems([...props.items, newItem]);
+    console.log("items",props.items);
   };
 
 
 
-  console.log("card props ", props);
   $(document).ready(function(){
     $(".wish-icon i").click(function(){
         $(this).toggleClass("fa-heart fa-heart-o");

@@ -35,7 +35,7 @@ export const Signf = () => {
         <form action="/action_page.php" className="contenu">
           <h2> Sign In </h2>
           <label htmlFor="email">
-            <b>Email</b>
+            <b><i class="fa fa-envelope" aria-hidden="true"></i> Email</b>
           </label>
           <input
             type="text"
@@ -44,7 +44,7 @@ export const Signf = () => {
             onChange={(e)=>{setEmail(e.target.value)}}
           />
           <label htmlFor="psw">
-            <b>Password</b>
+            <b><i class="fa fa-key" aria-hidden="true"></i> Password</b>
           </label>
           <input
             type="password"
