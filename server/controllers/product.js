@@ -5,22 +5,14 @@ const cloudinary= require('../cloudinary/cloudinary.js');
 
 module.exports = {
 
-
-
     //method to fetch all product from  database
-    
     
     getAllProduct:async (req, res)=> {
         let products = await Product.findAll({})
         res.status(200).send(products)
         },
 
-
-
 // method to add a product to the product table
-
-
-
 
     addProduct:async (req, res)=> {
          
@@ -47,8 +39,6 @@ try{
         res.status(200).send(product)
      } catch (error) {console.log(error)}
     },
-
-    
 
     // method to update a product 
 
@@ -78,20 +68,14 @@ try{
 }catch (err){console.log(err)}
 },
 
-
-
-
 // method to delete a product 
-
-
-
-
 
 
 deleteProduct:async (req, res)=> {
 
     const product = await Product.destroy({where:{
         id:req.params.id}})
+
     res.status(200).send('Product deleted')
 }
 }

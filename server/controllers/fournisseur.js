@@ -7,33 +7,31 @@ const bcrypt=require('bcrypt')
 const jwt=require("jsonwebtoken")
 
 
-
-
 module.exports = {
 
 // method to add a new fournisseur
-    addFournisseur:async (req, res)=> {
-        console.log(req.body);
-        const {CompanyName,manager,email,password,image,adress} = req.body;
-        try{
-            const result = await cloudinary.uploader.upload(image,{
-                folder:'fournisseurs'
-            })
-        const fournisseur = await Fournisseur.create({
-            CompanyName,
-            manager,
-            email,
-            password,
-            image:result.secure_url,
-            adress
+//     addFournisseur:async (req, res)=> {
+//         console.log(req.body);
+//         const {CompanyName,manager,email,password,image,adress} = req.body;
+//         try{
+//             const result = await cloudinary.uploader.upload(image,{
+//                 folder:'fournisseurs'
+//             })
+//         const fournisseur = await Fournisseur.create({
+//             CompanyName,
+//             manager,
+//             email,
+//             password,
+//             image:result.secure_url,
+//             adress
 
     
-        }
-        )
+//         }
+//         )
 
-        res.status(200).send(fournisseur)
-    }catch (err){console.log(err)}
-},
+//         res.status(200).send(fournisseur)
+//     }catch (err){console.log(err)}
+// },
 
 //get all the fournisseurs
 getFournisseur :async (req, res)=> {
@@ -58,23 +56,20 @@ deleteFournisseur:async (req, res)=> {
 //signing a user up
 //hashing users password before its saved to the database with bcrypt
 signUp:async(req,res)=>{
+    const {CompanyName,manager,email,password,image,adress} = req.body;
     try{
-        const {
-            CompanyName,
-            manager,
-            email,
-            password ,
-            image ,
-            adress,
-        }=req.body;
-        const data={CompanyName,
-            manager,
-            email,
-            password:await bcrypt.hash(password,10) ,
-            image ,
-            adress,}
+        const result = await cloudinary.uploader.upload(image,{
+            folder:'fournisseurs'
+        })
+    
             //saving founisseur
-            const fournisseur=await Fournisseur.create(data);
+            const fournisseur=await Fournisseur.create({CompanyName,
+                manager,
+                email,
+                password:await bcrypt.hash(password,10) ,
+                image:result.secure_url ,
+                adress,
+            });
             //if fournisseur details is captured
    //generate token with the fournisseur's id and the secretKey in the env file
    // set cookie with the token generated
@@ -143,6 +138,3 @@ getfour:async (req, res) => {
       console.log(error);}
    }
 }
-
-
-

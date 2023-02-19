@@ -1,6 +1,7 @@
 // Define and export the sequelize model that represents the table posts.
 
 module.exports = (sequelize, DataTypes) => {
+
     const product = sequelize.define("products", {
       name: {type: DataTypes.STRING},
       price: {type: DataTypes.INTEGER},
@@ -9,6 +10,5 @@ module.exports = (sequelize, DataTypes) => {
       category: {type: DataTypes.STRING},
       quantity: {type: DataTypes.INTEGER}, 
     });
-  
     return product;
   };

@@ -1,15 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom' 
 import axios from 'axios'
 
-
-export const Signf = () => {
+export const Singin = (props) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [redirect, setRedirect] = useState(false)
   const navigate = useNavigate();
-
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -17,34 +15,29 @@ export const Signf = () => {
           email:email,
           password:password,
       }
-      axios.post('http://localhost:3000/api/fournisseur/login',body)
+      axios.post('http://localhost:3000/api/user/login',body)
       .then((result)=>{
-          console.log(result); 
-          navigate("/dash");
+          console.log(result);
+          navigate("/panier");
       })
       .catch(err=>{
           console.log(err);
       })
       setRedirect(true)
   }
+
   return (
     <div>
-        <form id='signeF'>
-
+        <form action="">
             <input type="text"
             placeholder='email'
             onChange={(e)=>{setEmail(e.target.value)}} /><br />
-
-            <input type="password"
+            <input type="text"
             placeholder='mot de passe'
             onChange={(e)=>{setPassword(e.target.value)}} /><br />
-
         </form>
-
         <p onClick={()=>navigate()}><button onClick={handleSubmit}>Login</button></p>
-
-        <button onClick={() => navigate("/up")}>sign up here</button>
     </div>
   )
 }
-export default Signf
+export default Singin
