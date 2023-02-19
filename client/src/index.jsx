@@ -67,13 +67,13 @@ useEffect(()=>{(
        
     {/* <Route exact path="/ProductList" element={<ProductList/>}/> */}
     
-    <Route exact path="/" element={<Home/>}/>
+    {/* <Route exact path="/" element={<Home/>}/>
     <Route path='/up' element={<Signeupf/>} /> 
     <Route path='/loginf' element={<Signf setcompanyName={setcompanyName}/>}/>
     <Route exact path='/dash' element={< Main/>}/>
     <Route exact path="/product" element={<ProductDetails/>}/>
     <Route exact path="/fav" element={<Favorite/>}/>  
-    <Route exact path="/elec" element={ <Electronic/>}/> 
+    <Route exact path="/elec" element={ <Electronic/>}/>  */}
     {/* iheb work has conflit */}
     </Routes>
    </Router>
