@@ -114,7 +114,7 @@ let dataSearch = (value)=>{
  <Navbar/>
   <Routes>
         <Route path='/profile' element={<Profile/>} /> 
-      <Route path='/' element={<SignUpUser/>} />
+      {/* <Route path='/' element={<SignUpUser/>} /> */}
       <Route path='/login' element={<Singin setName={setName}/>} /> 
        
    <Route path='/up' element={<Signeupf/>} /> 
