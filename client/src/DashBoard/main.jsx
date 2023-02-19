@@ -74,7 +74,7 @@ const onChangeView=(nav)=>{
   </div>
 
 </nav> 
- <h1> haya si zebi {four.CompanyName} </h1>
+ <h1> hi {four.CompanyName} </h1>
 {changeView()}
 </div>
 )
