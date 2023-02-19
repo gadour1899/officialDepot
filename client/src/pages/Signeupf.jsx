@@ -78,7 +78,7 @@ const handeladd=()=>{
                  onChange={(e)=>{setadresse(e.target.value)}}/><br/>
                  
         </form>
-            <button  id='button' onClick={submitForm}>add here </button>
+            <button  id='button'>add here </button>
 
           <button  id='butF' onClick={handeladd}>add here </button>
     </div>
