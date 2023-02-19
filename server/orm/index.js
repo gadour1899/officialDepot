@@ -1,9 +1,11 @@
 const { Sequelize, DataTypes } = require('sequelize');
 
 
-const config = require('./config');
 
 
+
+
+const config = require('../orm/config.js');
 
 
 //Created a Sequelize instance and passed the appropriate parameters separately,
