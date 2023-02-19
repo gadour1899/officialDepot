@@ -11,7 +11,7 @@ router.get('/getf', Fournisseur.getFournisseur);
 
 
 //ADD a new fournisseur 
-router.post('/addf', Fournisseur.addFournisseur);
+// router.post('/addf', Fournisseur.addFournisseur);
 // update fournisseur information
 router.put('/updatef/:id', Fournisseur.updateFournisseur);
 // delete fournisseur information
@@ -23,7 +23,6 @@ router.post("/signup", fournisseAuth.saveFournisseur,Fournisseur.signUp)
 //login route
 router.post("/login",Fournisseur.login)
 
-
-
 router.get('/tokenf', Fournisseur.getfour);
+
 module.exports = router;

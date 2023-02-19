@@ -18,7 +18,7 @@ export const Singin = (props) => {
       axios.post('http://localhost:3000/api/user/login',body)
       .then((result)=>{
           console.log(result);
-          navigate("/panier");
+          navigate("/profile");
       })
       .catch(err=>{
           console.log(err);

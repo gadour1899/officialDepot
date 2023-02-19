@@ -22,7 +22,7 @@ function Navbar(props) {
          <Search dataSearch={props.dataSearch}/>
           {/* buttons */}
           <div className="icons">
-          <div className='iconN'><PersonOutlineIcon onClick={() => navigate("/singup")} /></div>
+          <div className='iconN'><PersonOutlineIcon onClick={() => navigate("/loginf")} /></div>
          <div className='iconN'><FavoriteBorderIcon onClick={() => navigate("/fav")}/></div> 
         <div className='iconN'><LocalGroceryStoreIcon onClick={() => navigate("/fpannier")}/></div>
           </div>
