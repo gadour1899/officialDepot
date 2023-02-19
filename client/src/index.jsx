@@ -75,6 +75,7 @@ const getOne=(id)=>{
 }
 
 let dataSearch = (value)=>{
+  console.log("value searched",value)
   const newproduct= products.filter(e=>(e.name.toLowerCase()).includes(value.toLowerCase()))
    setProducts(newproduct)
  }
@@ -82,7 +83,7 @@ let dataSearch = (value)=>{
   return (
     <div className='App'>
       <Router>
-      <Navbar/>
+      <Navbar dataSearch={dataSearch}/>
       <Routes> 
       {/* <Route path='/profile' element={<Profile/>} /> 
       <Route path='/up' element={<SignUpUser/>} />
@@ -96,7 +97,6 @@ let dataSearch = (value)=>{
     <Route exact path="/product" element={<ProductDetails data={singleProduct}/>}/>
     <Route exact path="/fav" element={<Favorite/>}/>
     <Route exact path="/elec" element={ <Electronic/>}/>
-    <Route exact path="/search" element={<Search dataFiltred={dataSearch}/>}/> 
     </Routes>
    </Router>
     </div>

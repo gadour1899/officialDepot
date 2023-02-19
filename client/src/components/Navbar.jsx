@@ -7,9 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 // import { Link } from 'react-router-dom';
 
-
-
-function Navbar() {
+function Navbar(props) {
   const navigate = useNavigate()
   
   return (
@@ -21,7 +19,7 @@ function Navbar() {
             <img className="h-8 " src="./logo.jpg" alt="" onClick={() => navigate("/")}/>
        </div> 
           {/* search */}
-         <Search/>
+         <Search dataSearch={props.dataSearch}/>
           {/* buttons */}
           <div className="icons">
           <div className='iconN'><PersonOutlineIcon onClick={() => navigate("/singup")} /></div>

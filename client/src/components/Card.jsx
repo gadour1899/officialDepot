@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 
 function Card(props) {
 
-
-
   console.log("card props ", props);
   $(document).ready(function(){
     $(".wish-icon i").click(function(){
