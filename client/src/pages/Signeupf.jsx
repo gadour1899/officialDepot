@@ -50,39 +50,101 @@ const handeladd=()=>{
 
 
   return (
-  <div>
-        <form id='signeF'>
-        <input type="file" 
-        name='image'
-        placeholder='image'
-        onChange={handleImage}/><br/>
-                    <input type="text" 
-                     name='companyName'
-                     placeholder='companyName'
-                 onChange={(e)=>{setname(e.target.value),console.log(e.target.value)}}/><br />
-                 <input type="text" 
-                   name='manger'
-                 placeholder='manger'
-                 onChange={(e)=>{setmanger(e.target.value)}}/><br />
-                 <input type="email" 
-                name='email'
-                 placeholder='email'
-                 onChange={(e)=>{setemail(e.target.value)}}/><br />
-                 <input type="password" 
-                 name='password'
-                 placeholder='password'
-                 onChange={(e)=>{setpassword(e.target.value)}}/><br/>
-                 <input type="adresse"
-                 name='adresse' 
-                 placeholder='adresse'
-                 onChange={(e)=>{setadresse(e.target.value)}}/><br/>
-                 
-        </form>
-            <button  id='button' onClick={submitForm}>add here </button>
+  // <div>
+  //       <form id='signeF'>
+  //       <input type="file" 
+  //       name='image'
+  //       placeholder='image'
+  //       onChange={handleImage}/><br/>
+  //                   <input type="text" 
+  //                    name='companyName'
+  //                    placeholder='companyName'
+  //                onChange={(e)=>{setname(e.target.value),console.log(e.target.value)}}/><br />
+  //                <input type="text" 
+  //                  name='manger'
+  //                placeholder='manger'
+  //                onChange={(e)=>{setmanger(e.target.value)}}/><br />
+  //                <input type="email" 
+  //               name='email'
+  //                placeholder='email'
+  //                onChange={(e)=>{setemail(e.target.value)}}/><br />
+  //                <input type="password" 
+  //                name='password'
+  //                placeholder='password'
+  //                onChange={(e)=>{setpassword(e.target.value)}}/><br/>
+  //                <input type="adresse"
+  //                name='adresse' 
+  //                placeholder='adresse'
+  //                onChange={(e)=>{setadresse(e.target.value)}}/><br/>
+                  
 
-          <button  id='butF' onClick={handeladd}>add here </button>
+                 
+  //       </form>
+            
+        
+  //       <p onClick={()=>navigate("/loginf")}><button  id='butF' onClick={handeladd}>add here </button></p>
+  //   </div>
+  <div className="login">
+      <div className="bg-img">
+        <form action="/action_page.php" className="contenup">
+          <h2> Sign Up</h2>
+          <label htmlFor="psw">
+            <b>Company Name</b>
+          </label>
+          <input
+            type="text"
+            placeholder="Company Name"
+            name="psw"
+            onChange={(e)=>{setname(e.target.value),console.log(e.target.value)}}/>
+            <label htmlFor="psw">
+            <b>Manager Name</b>
+          </label>
+          <input
+            type="text"
+            placeholder="Manager Name"
+            name="psw"
+            onChange={(e)=>{setmanger(e.target.value)}}/>
+          <label htmlFor="email">
+            <b>Email</b>
+          </label>
+          <input
+            type="text"
+            placeholder="Enter Email"
+            name="email"
+            onChange={(e)=>{setemail(e.target.value)}} />
+          <label htmlFor="psw">
+            <b>Password</b>
+          </label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            name="psw"
+            onChange={(e)=>{setpassword(e.target.value)}}/>
+            <label htmlFor="psw">
+            <b>Adress</b>
+          </label>
+          <input
+            type="text"
+            placeholder="Enter Adress"
+            name="psw"
+            onChange={(e)=>{setadresse(e.target.value)}}/>
+            <label htmlFor="psw">
+            <b>Profile Image</b>
+          </label>
+          <input className='file'
+            type="file" 
+            placeholder='image'
+            name='image'
+            onChange={handleImage}/>
+          <button type="submit" className="beetn" 
+          onClick={handeladd}> <p onClick={()=>navigate("/loginf")}>
+           Submit </p>
+          </button>
+        </form>
+      </div>
     </div>
   )
 }
 
 export default Signeupf
+

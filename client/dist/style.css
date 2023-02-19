@@ -185,7 +185,7 @@ background-color:#7ac400;
 .btnnn {
   transform: translateY(0px);
   transition: 0.3s linear;
-  background: #809fff;
+  background: #7ac400;
   border-radius: 5px;
   position: relative;
   overflow: hidden;
@@ -199,7 +199,7 @@ background-color:#7ac400;
 
 .btnnn:hover {
   transform: translateY(-6px);
-  background: #1a66ff;
+  background: #7ac400;
 }
 
 .btnnn span {
@@ -521,7 +521,7 @@ height: 220px;
 right: 10%;
 margin: 20px;
 width: 400px;  
-height: 420px;
+height: 450px;
 padding: 16px;
 background-color: white;
 margin-left: 35%;
@@ -573,6 +573,23 @@ font-size: 120%;
 
 .compte {
 font-size: larger;
+}
+/*signupF*/
+.contenup {
+  right: 10%;
+  margin: 20px;
+  width: 500px;  
+  height: 800px;
+  padding: 16px;
+  background-color: white;
+  margin-left: 35%;
+  }
+  .contenup:hover {
+  box-shadow: 0 4px 8px 0 gray;
+  border-radius: 10px;
+  }
+.file{
+  margin-bottom: 20px;
 }
 
 

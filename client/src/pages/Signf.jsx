@@ -2,12 +2,16 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-export const Signf = (props) => {
+
+export const Signf = () => {
+
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [redirect, setRedirect] = useState(false)
   const navigate = useNavigate();
+
+
   const handleSubmit = (e) => {
     e.preventDefault()
       let body = {
@@ -16,8 +20,8 @@ export const Signf = (props) => {
       }
       axios.post('http://localhost:3000/api/fournisseur/login',body)
       .then((result)=>{
-          console.log(result);
-          navigate("/Profile"); //you need to change this to the
+          console.log(result); 
+          navigate("/dash");
       })
       .catch(err=>{
           console.log(err);
@@ -25,23 +29,11 @@ export const Signf = (props) => {
       setRedirect(true)
   }
   return (
-    // <div>
-    //     <form id='signeF'>
-    //         <input type="text"
-    //         placeholder='email'
-    //         onChange={(e)=>{setEmail(e.target.value)}} /><br />
-    //         <input type="password"
-    //         placeholder='mot de passe'
-    //         onChange={(e)=>{setPassword(e.target.value)}} /><br />
-    //     </form>
-    //     <p onClick={()=>navigate()}><button id='butF' onClick={handleSubmit}>Login</button></p>
-    // </div>
-    
-    ////
-    <div className="login">
+   
+<div className="login">
       <div className="bg-img">
         <form action="/action_page.php" className="contenu">
-          <h1> Sign In </h1>
+          <h2> Sign In </h2>
           <label htmlFor="email">
             <b>Email</b>
           </label>
@@ -67,7 +59,7 @@ export const Signf = (props) => {
           </button>
 
           <p className="compte">Don’t have an account?</p>
-          <a href="#" className="txt3" >
+          <a href="#" className="txt3" onClick={() => navigate("/up")} >
               Sign up now
             </a>
         </form>

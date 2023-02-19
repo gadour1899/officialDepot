@@ -1,3 +1,4 @@
+
 import React from 'react'
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -24,7 +25,9 @@ function Navbar() {
          <Search/>
           {/* buttons */}
           <div className="icons">
-          <div className='iconN'><PersonOutlineIcon onClick={() => navigate("/signf")} /></div>
+
+          <div className='iconN'><PersonOutlineIcon onClick={() => navigate("/loginf")} /></div>
+
          <div className='iconN'><FavoriteBorderIcon onClick={() => navigate("/fav")}/></div> 
         <div className='iconN'><LocalGroceryStoreIcon onClick={() => navigate("/fpannier")}/></div>
           </div>

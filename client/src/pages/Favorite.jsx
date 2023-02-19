@@ -1,13 +1,13 @@
 import React from 'react'
 
 function Favorite(props) {
-  const [items, setItems] = useState([]);
+
   return (
     <div>
-      <h2>My Wishlist</h2>
-      <div className="item active">
+      <h2>My Wishlist  <span className="wish-icon"><i className="fa fa-heart-o" /></span></h2>
+       <div className="item active">
                   <div className="row">
-                  {props.data.map((product, index) => ( 
+                  {props.wish.map((product, index) => ( 
                     <div key={index} className="col-sm-3">
                       <div className="thumb-wrapper">
                         <div className="img-box">
@@ -22,7 +22,8 @@ function Favorite(props) {
                       </div> 
                     </div> ))}
                   </div> 
-                </div> 
+                </div>  
+                 
                 </div> 
         
   )

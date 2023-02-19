@@ -1,20 +1,19 @@
 import React , {useState,useEffect} from 'react'
 import $ from 'jquery';
 import { Link } from 'react-router-dom';
+import Favorite from '../pages/Favorite.jsx';
 
 
 function Card(props) {
 
-  // const [items, setItems] = useState([]);
+  const [items, setItems] = useState([]);
+  const [show, setShow] = useState(true);
 
-  // const handleAddItem = (newItem) => {
-  //   setItems([...items, newItem]);
-  // };
+  const handleAddItem = (newItem) => {
+    setItems([...items, newItem]);
+  };
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const newItem = props ;
-    // handleAddItem (newItem);}
+
 
   console.log("card props ", props);
   $(document).ready(function(){
@@ -45,7 +44,8 @@ function Card(props) {
                   {props.data.map((product, index) => ( 
                     <div key={index} className="col-sm-3">
                       <div className="thumb-wrapper">
-                        <span className="wish-icon"><i className="fa fa-heart-o" /*onClick={handleSubmit} *//></span>
+                        <span className="wish-icon"><i className="fa fa-heart-o" onClick={()=>handleAddItem(product)} /></span>
+                        {!show &&<Favorite wish={items}/>}
                         <div className="img-box">
                           <img src={product.image} className="img-responsive" alt="" />									
                         </div>
