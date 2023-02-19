@@ -74,6 +74,7 @@ useEffect(()=>{(
     <Route exact path="/product" element={<ProductDetails/>}/>
     <Route exact path="/fav" element={<Favorite/>}/>
     <Route exact path="/elec" element={ <Electronic/>}/> 
+    {/* iheb work has conflit */}
     </Routes>
    </Router>
 
