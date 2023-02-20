@@ -53,36 +53,6 @@ const handeladd=()=>{
 
 
   return (
-  // <div>
-  //       <form id='signeF'>
-  //       <input type="file" 
-  //       name='image'
-  //       placeholder='image'
-  //       onChange={handleImage}/><br/>
-  //                   <input type="text" 
-  //                    name='companyName'
-  //                    placeholder='companyName'
-  //                onChange={(e)=>{setname(e.target.value),console.log(e.target.value)}}/><br />
-  //                <input type="text" 
-  //                  name='manger'
-  //                placeholder='manger'
-  //                onChange={(e)=>{setmanger(e.target.value)}}/><br />
-  //                <input type="email" 
-  //               name='email'
-  //                placeholder='email'
-  //                onChange={(e)=>{setemail(e.target.value)}}/><br />
-  //                <input type="password" 
-  //                name='password'
-  //                placeholder='password'
-  //                onChange={(e)=>{setpassword(e.target.value)}}/><br/>
-  //                <input type="adresse"
-  //                name='adresse' 
-  //                placeholder='adresse'
-  //                onChange={(e)=>{setadresse(e.target.value)}}/><br/>
-                  
-
-
-
   <div className="login">
       <div className="bg-img">
         <form action="/action_page.php" className="contenup">
@@ -128,7 +98,7 @@ const handeladd=()=>{
             name="psw"
             onChange={(e)=>{setadresse(e.target.value)}}/>
             <label htmlFor="psw">
-            <b>Profile Image</b>
+            <b> Profile Image</b>
           </label>
           <input className='file'
             type="file" 
@@ -141,9 +111,6 @@ const handeladd=()=>{
           </button>
         </form>
       </div>
-
-        <button  id='butF' onClick={handeladd}>add here </button>
-
     </div>
   )
 }

@@ -54,7 +54,7 @@ export const Signf = () => {
           />
 
           <button type="submit" className="beetn" 
-          onClick={handleSubmit}> <p onClick={()=>navigate()}>
+          onClick={handleSubmit}> <p onClick={()=>navigate("/dash")}>
            Submit </p>
           </button>
 

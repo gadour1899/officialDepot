@@ -26,10 +26,25 @@ function Navbar() {
           {/* buttons */}
           <div className="icons">
 
-          <div className='iconN'><PersonOutlineIcon onClick={() => navigate("/loginf")} /></div>
+          <div><PersonOutlineIcon   sx={{
+          ml:"100px",
+            mt: "20px",
+            height: "20px",
+            width: "20px",
+           }}onClick={() => navigate("/loginf")} /></div>
 
-         <div className='iconN'><FavoriteBorderIcon onClick={() => navigate("/fav")}/></div> 
-        <div className='iconN'><LocalGroceryStoreIcon onClick={() => navigate("/fpannier")}/></div>
+         <div ><FavoriteBorderIcon  sx={{
+          ml:"100px",
+            mt: "20px",
+            height: "20px",
+            width: "20px",
+           }} onClick={() => navigate("/fav")}/></div> 
+        <div ><LocalGroceryStoreIcon  sx={{
+          ml:"100px",
+            mt: "20px",
+            height: "20px",
+            width: "20px",
+           }} onClick={() => navigate("/basket")}/></div>
           </div>
        </nav>
 

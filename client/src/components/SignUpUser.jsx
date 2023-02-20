@@ -3,7 +3,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from'react-router-dom'
 
-const signUpUser = () => {
+const  SignUpUser = () => {
     const [name,setName]=useState('')
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
@@ -54,18 +54,62 @@ const signUpUser = () => {
     }
 
   return (
-    <div id="signup"> 
-      <form id="form">
-            <a href="#"><i class="fa fa-user" aria-hidden="true"></i></a> <input type="text" name="name" placeholder="Enter your name" onChange={handleName}/> <br/>
-           <a href='#'><i class="fa fa-envelope" aria-hidden="true"></i></a> <input type="text" name="email"  placeholder="Enter your email" onChange={handleEmail}/> <br/>
-           <a href='#'><i class="fa fa-key" aria-hidden="true"></i></a> <input type="password" name="password"  placeholder="Enter your password" onChange={handlePassword}/> <br/>
-           <a href='#'><i class="fa fa-map-marker" aria-hidden="true"></i></a> <input type="text" name="adress"  placeholder="Enter your adress" onChange={handleAddress}/> <br/>
-           <a href='#'><i class="fa fa-phone-square" aria-hidden="true"></i></a> <input type="tel" name="phoneNumber"  placeholder="Enter your phone" onChange={handlePhoneNumber}/> <br/>
-        </form> 
-       <button id="button1" type='submit' onClick={addUser}><b/>SignUp</button>
+    <div className="login">
+    <div className="bg-img">
+      <form action="/action_page.php" className="contenup">
+        <h2> Sign Up</h2>
+          <label htmlFor="psw">
+          <b><i class="fa fa-user" aria-hidden="true"></i>  Name</b>
+        </label>
+        <input
+          type="text"
+          placeholder="Manager Name"
+          name="psw"
+          onChange={handleName}/>
+        <label htmlFor="email">
+          <b><i class="fa fa-envelope" aria-hidden="true"></i> Email</b>
+        </label>
+        <input
+          type="text"
+          placeholder="Enter Email"
+          name="email"
+          onChange={handleEmail} />
+        <label htmlFor="psw">
+          <b><i class="fa fa-key" aria-hidden="true"></i> Password</b>
+        </label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          onChange={handlePassword}/>
+          <label htmlFor="psw">
+          <b><i class="fa fa-map-marker" aria-hidden="true"></i> Adress</b>
+        </label>
+        <input
+          type="text"
+          placeholder="Enter Adress"
+          name="psw"
+          onChange={handleAddress}/>
+          <label htmlFor="psw">
+          <b><i class="fa fa-phone-square" aria-hidden="true"></i> Phone Number</b>
+        </label>
+        <input 
+          type="text"
+          name="phoneNumber"  
+          placeholder="Enter your phone" 
+          onChange={handlePhoneNumber}/>
+        <button type="submit" className="beetn" 
+        onClick={addUser}> <p onClick={()=>navigate("/login")}>
+         Submit </p>
+        </button>
+      </form>
     </div>
+    </div>
+    
   )
 }
 
 
-export default signUpUser
+export default SignUpUser
+
+
