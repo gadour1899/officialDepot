@@ -8,6 +8,7 @@ const sequelize = new Sequelize(config.DATABASE, config.USER,config.PASSWORD, {
     dialect: 'mysql'
   });
 
+
 //Create and export a db object which holds the sequelize models,
 //with the respective associations.
 const db = {};

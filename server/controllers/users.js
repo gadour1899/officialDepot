@@ -73,8 +73,6 @@ module.exports = {
     let token=jwt.sign({id:user.id,name:user.name,email:user.email},process.env.SECRET_KEY,{
         expiresIn: 1 * 24 * 60 * 60 * 1000,
     });
-    // res.cookie('jwt',token);
-    // console.log(token);
     return res.status(201).send(user);
 } else {
      return res.status(409).send("Details are not correct");
@@ -87,7 +85,7 @@ module.exports = {
   login : async (req, res) => {
     try{
         const {email,password} = req.body;
-        //find a user by their email
+    //find a user by their email
    const user = await User.findOne({
     where: {
     email: email

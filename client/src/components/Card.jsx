@@ -1,10 +1,10 @@
 import React , {useState,useEffect} from 'react'
 import $ from 'jquery';
-import { Link } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 
 
 function Card(props) {
-
+  
   console.log("card props ", props);
   $(document).ready(function(){
     $(".wish-icon i").click(function(){
@@ -20,7 +20,7 @@ function Card(props) {
      
         <div className="row">
           <div className="col-md-12">
-            <h2>company name</h2>
+            <h2>Product list </h2>
             <div id="myCarousel" className="carousel slide" data-ride="carousel" data-interval={0}>
               <ol className="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to={0} className="active" />
@@ -41,7 +41,8 @@ function Card(props) {
                         <div className="thumb-content">
                           <h4>{product.name}</h4>									
                           <p className="item-price"> {product.quantity} <b>{product.price} DNT</b></p>
-                          <Link to="/product" ><a onClick ={()=>{props.setSingleProduct(product)
+                          <Link to="/product" >
+                          <a onClick ={()=>{props.setSingleProduct(product) 
                               }} href="#" className="btn btn-primary">More Details</a> </Link> 
                         </div>		
                       </div> 

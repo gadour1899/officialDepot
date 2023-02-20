@@ -13,14 +13,6 @@ const ProductList = (props) => {
     const [toUpdate,setToUpdate]=useState({})
     const [image,setImage]=useState("")
 
-  //  console.log("img url from data", JSON.parse(image));
-    // const [name,setName]=useState("")
-    // const [price,setPrice]=useState(0)
-    // const [image,setImage]=useState("")
-    // const [description,setDescription]=useState("")
-    // const [category,setCategory]=useState("")
-    // const [quantity,setQuantity]=useState("")
-
 
 // fetching data
  useEffect(() => {
@@ -43,23 +35,6 @@ setOpenForm(!openForm)
   setChange(!change);
 }
 
-  
- 
-// // Add new products 
-// const onClickCreate =()=>{
-// axios.post('http://localhost:3030/api/product/addp',{
-//     "name":name,
-//     "price":price,
-//     "description":description,
-//     "image":image,
-//     "category":category,
-//     "quantity":quantity,
-// })
-// .then(res=>{
-//   console.log(res)
-// }).catch(err=>{console.log(err)})
-// setChange(!change)
-// }
 
 // handle the onclick event to delete product
 const onEdit=(product)=>{
