@@ -1,18 +1,25 @@
+
 import React, {useEffect,useState} from 'react';
 import axios from 'axios';
 import Cases from './Cases.jsx';
 import PopOutUpdate from './PopOutUpdate.jsx';
+import BuildIcon from '@mui/icons-material/Build';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import {useLocation} from 'react-router-dom'
 
 
-const ProductList = () => {
+const ProductList = (props) => {
+
+  const location=useLocation()
+  console.log("productList props", location)
     const [products,setProducts]=useState([])
     const [change,setChange]=useState(false); 
     const [openForm,setOpenForm]=useState(false); // to open creating update form
     const [openFormUpdate,setOpenFormUpdate]=useState(false);// to open updating update form
-    const [id,setId]=useState(0)
     const [toUpdate,setToUpdate]=useState({})
     const [image,setImage]=useState("")
-
+    const [id,setId]=useState("")
+ console.log('location',location);
   //  console.log("img url from data", JSON.parse(image));
     // const [name,setName]=useState("")
     // const [price,setPrice]=useState(0)
@@ -22,13 +29,18 @@ const ProductList = () => {
     // const [quantity,setQuantity]=useState("")
 
 
-// fetching data
- useEffect(() => {
-    axios.get('/api/product/getAllp')
-    .then(result=>{console.log(result)
-    setProducts(result.data)})
-    .catch(err=>console.log(err))
-  }, [change]);
+// fetching data belong to the current fournisseur
+
+
+console.log("ééééééé",id);
+useEffect(() => {
+  setId(location.state.data.id)
+
+      axios.get(`/api/product/fournisseurproduct/${id}`)
+      .then(result=>{console.log(result)
+      setProducts(result.data)})
+      .catch(err=>console.log(err))
+    }, [change]);
 
 const togglePopup =() => {
 setOpenFormUpdate(!openFormUpdate)
@@ -38,7 +50,7 @@ setChange(!change)
 
 
   //onclick open create product inputs 
-  const onClick =() => {
+  const togglePopupCreate =() => {
 setOpenForm(!openForm)   
   setChange(!change);
 }
@@ -76,9 +88,9 @@ const onDelete =(product) => {
 }
   return (
     <div>
-
-<button onClick={()=>onClick()} >Create a new product</button>
-{openForm && <Cases change={change} setChange={setChange}/>}
+<h2>DashBoard</h2>
+<button onClick={()=>togglePopupCreate()} >Create a new product</button>
+{openForm && <Cases id={id}  closePop={togglePopupCreate}/>}
 
 
     <table id="customers">
@@ -105,14 +117,21 @@ const onDelete =(product) => {
             <td>{product.category}</td>
             <td>{product.quantity}</td>
             {/* <td><img src={product.image} /></td> */}
-            <button  className="editbutton"  onClick={()=>{
-              onEdit(product)
+            <BuildIcon sx={{
+          ml:"30px",
+            mt: "20px",
+            height: "20px",
+            width: "20px",
+           }} onClick={()=>{onEdit(product)
               togglePopup()
-              setImage(product.image)
-              }} >Edit</button>
+              setImage(product.image) }} />  
               
             {openFormUpdate && <PopOutUpdate   change={change} setChange={setChange} product={toUpdate} handleClose={togglePopup}/>}
-            <button  onClick={()=>onDelete(product.id)}class="deletebutton">Delete</button>
+            <DeleteForeverIcon sx={{
+          ml:"30px",
+            mt: "20px",
+            height: "20px",
+            width: "20px",}} onClick={()=>onDelete(product.id)}/>
           </tr>
 })}
       </tbody>

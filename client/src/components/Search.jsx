@@ -17,13 +17,19 @@ function Search(props) {
 
 <div className='search' >
        <select  className="all">
-             <option id='categ'>All categories</option>
+             <option >All categories</option>
               <option>food</option>
               <option onClick={() => navigate("/elec")}>Electronic</option>
               <option>accessoires</option> 
             </select>  
            <input className="input-s" type="text" placeholder="I'm searching for ..."  onChange={handleChange}/> 
-           <ManageSearchIcon onClick={() => navigate("/elec")} />
+           <ManageSearchIcon  sx={{
+            ml:"100px",
+            position: "absolute",
+            mt: "20px",
+            height: "20px",
+            width: "20px",
+           }} onClick={() => navigate("/elec")} />
     </div>
   )
 }

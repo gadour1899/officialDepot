@@ -76,12 +76,12 @@ const handleImage =e=>{
       <div className="box">
         <span className="close-icon" onClick={props.handleClose} >x</span>
         <form onSubmit={submitForm}>
-              <input type="text" name="name" onChange={onChangeName} defaultValue={props.product.name} />
-              <input type="number" name="price" onChange={onChangePrice} defaultValue={props.product.price} />
-              <input type="text" name="description"onChange={onChangeDescription} defaultValue={props.product.description}/>
-              <input type="text" name="category" onChange={onChangeCategory} defaultValue={props.product.category} />
-              <input type="number" name="quantity" onChange={onChangeQuantity} defaultValue={props.product.quantity}  />
-              <input type="file" name="image"  onChange={handleImage}/>
+              <input type="text" name="name" onChange={onChangeName} placeholder="Product Name" defaultValue={props.product.name} />
+              <input type="number" name="price" onChange={onChangePrice} placeholder="Price DNT" defaultValue={props.product.price} />
+              <input type="text" name="description"onChange={onChangeDescription} placeholder="Description" defaultValue={props.product.description}/>
+              <input type="text" name="category" onChange={onChangeCategory} placeholder="Category" defaultValue={props.product.category} />
+              <input type="number" name="quantity" onChange={onChangeQuantity} placeholder="Quantity"  defaultValue={props.product.quantity}  />
+              <input type="file" name="image" placeholder="Image" onChange={handleImage}/>
 
               
              </form>

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
+import DeleteIcon from '@mui/icons-material/Delete';
+
+
 
 
 const Basket = (props) => {
@@ -30,7 +33,7 @@ const Basket = (props) => {
     <div>
       <div className="CartContainer">
         <div className="Header">
-          <h3 className="Heading">Shopping Cart</h3>
+          <h2 >Shopping Cart</h2>
         </div>
         {props.basket.map((product) => (
           <div key={product.id} className="Cart-Items">
@@ -44,7 +47,12 @@ const Basket = (props) => {
             <div className="prices">
               <div className="amount">{product.price}</div>
               <div className="remove" onClick={() => removeProductFromBasket(product.id)}>
-                <u>Remove</u>
+              <DeleteIcon sx={{
+            ml:"10px",
+            mt: "20px",
+            height: "30px",
+            width: "30px",
+            color:"black"}}/>
               </div>
         
              

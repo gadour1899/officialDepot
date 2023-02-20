@@ -12,9 +12,9 @@
 }
 .editbutton {
   width: 73px;
-    background-color:green;
+    background-color:rgb(163, 174, 163);
 }
-.logo .h-8{
+.logo {
   
   width: 150px;
   height: 100px;
@@ -53,6 +53,9 @@
   }
 
 
+/* 
+
+
  .logo .h-8{
   
     width: 150px;
@@ -67,26 +70,29 @@
   padding-left: 3%;
 padding-bottom: 30px;
 }
+>>>>>>> 6a1064a1e67e835651cd2ebcb2bef99d87d9490d
 .search{
   padding-right: 30%;
   display: flex;
-
-}
-#categ{
-  height: 40px;
-  width: 350px;
-  border-radius: 6px;
-}
-.input-s{
-  height: 40px;
-  width: 350px;
-  border-radius: 6px;
-}
-.alL{
-  height: 45px !important;
+  height: 40px !important;
   width: 150px !important;
   border-radius: 6px;
+
 }
+.input-s{
+.input-s{
+  height: 40px; */
+  /* width: 350px; */
+  /* border-radius: 5px; 
+/* } */
+/* .alL{
+  height: 40px !important;
+  width: 150px !important;
+  border-radius: 6px;
+} */
+.input-s{border-radius: 5px;
+  width:350px }
+
 .all:hover{
 background-color:#7ac400;
 }
@@ -95,17 +101,10 @@ background-color:#7ac400;
   padding-right: 50px;
   display: flex;
   
-
 }
-.iconN{
-  margin-right: 30px;
-  width: 80px !important;
-  height: 100px !important;
 
-}
 
 .iconN :hover{
-      transform: translateY(-6px);
       box-shadow: #77777769;
 
     }
@@ -181,7 +180,7 @@ background-color:#7ac400;
 .btnnn {
   transform: translateY(0px);
   transition: 0.3s linear;
-  background: #809fff;
+  background: #7ac400;
   border-radius: 5px;
   position: relative;
   overflow: hidden;
@@ -195,7 +194,7 @@ background-color:#7ac400;
 
 .btnnn:hover {
   transform: translateY(-6px);
-  background: #1a66ff;
+  background: #7ac400;
 }
 
 .btnnn span {
@@ -461,15 +460,6 @@ h2::after {
 
 
 
-/* form{
-    border: 1px solid;
-    margin: auto;
-    width: 50%;
-    padding:10PX;
-} */
-
-
-
 /* Popup style */
 .popup-box {
   position: fixed;
@@ -511,13 +501,13 @@ h2::after {
 /*login*/
 
 .login {
-height: 200px; 
+height: 220px; 
 }
 .contenu {
 right: 10%;
 margin: 20px;
 width: 400px;  
-height: 420px;
+height: 450px;
 padding: 16px;
 background-color: white;
 margin-left: 35%;
@@ -570,6 +560,23 @@ font-size: 120%;
 .compte {
 font-size: larger;
 }
+/*signupF*/
+.contenup {
+  right: 10%;
+  margin: 20px;
+  width: 500px;  
+  height: 800px;
+  padding: 16px;
+  background-color: white;
+  margin-left: 35%;
+  }
+  .contenup:hover {
+  box-shadow: 0 4px 8px 0 gray;
+  border-radius: 10px;
+  }
+.file{
+  margin-bottom: 20px;
+}
 
 .CartContainer {
   max-width: 800px;
@@ -586,7 +593,7 @@ font-size: larger;
 .Heading {
   font-size: 24px;
   font-weight: bold;
-  color: #333;
+  color: gray
 }
 
 .Cart-Items {
@@ -613,6 +620,7 @@ font-size: larger;
   font-size: 18px;
   font-weight: bold;
   color: #333;
+  margin-top: 20px;
 }
 
 .desc {
@@ -646,12 +654,13 @@ font-size: larger;
 
 button {
   border: none;
-  background-color: #007bff;
+  background-color:#7ac400;
   color: #fff;
   font-size: 14px;
   font-weight: bold;
   padding: 8px 12px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 button:hover {
@@ -688,8 +697,13 @@ button:hover {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 300px;
-  margin: auto;
+  height: 300px;
   text-align: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-left: 40%;
+  padding-top: 50px;
+
 }
 
 .title {
@@ -722,4 +736,20 @@ button:hover, a:hover {
 
 .buttoni:hover {
   background-color: #1b1b1d;
+}
+
+select.all{
+  position: absolute;
+    margin-left: -130px;
+    margin-top: 8px;
+    padding: 12px;
+    border-radius: 5px;
+}
+.DACH h3{
+  color: #000;
+  font-weight: 100;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  margin: 50px 0 30px;
 }
