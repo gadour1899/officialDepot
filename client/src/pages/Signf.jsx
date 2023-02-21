@@ -29,24 +29,41 @@ export const Signf = () => {
       setRedirect(true)
   }
   return (
-    <div>
-        <form id='signeF'>
+   
+<div className="login">
+      <div className="bg-img">
+        <form action="/action_page.php" className="contenu">
+          <h2> Sign In </h2>
+          <label htmlFor="email">
+            <b><i class="fa fa-envelope" aria-hidden="true"></i> Email</b>
+          </label>
+          <input
+            type="text"
+            placeholder="Enter Email"
+            name="email"
+            onChange={(e)=>{setEmail(e.target.value)}}
+          />
+          <label htmlFor="psw">
+            <b><i class="fa fa-key" aria-hidden="true"></i> Password</b>
+          </label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            name="psw"
+            onChange={(e)=>{setPassword(e.target.value)}}
+          />
+          <button type="submit" className="beetn" 
+          onClick={handleSubmit}> <p onClick={()=>navigate("/dash")}>
+           Submit </p>
+          </button>
 
-            <input type="text"
-            placeholder='email'
-            onChange={(e)=>{setEmail(e.target.value)}} /><br />
-
-            <input type="password"
-            placeholder='mot de passe'
-            
-            onChange={(e)=>{setPassword(e.target.value)}} /><br />
-
+          <p className="compte">Don’t have an account?</p>
+          <a href="#" className="txt3" onClick={() => navigate("/up")} >
+              Sign up now
+            </a>
         </form>
-
-        <p onClick={()=>navigate()}><button onClick={handleSubmit}>Login</button></p>
-
-        <button onClick={() => navigate("/up")}>sign up here</button>
-    </div>
+      </div>
+    </div> 
   )
 }
 export default Signf
